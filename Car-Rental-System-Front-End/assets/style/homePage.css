@@ -15,6 +15,25 @@
     height: 41vw;
     background: #39d01c;
 }
+
+.container-two {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 101vw;
+    height: 500px;
+    background: #e8ee0c
+}
+
+.container-three {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 101vw;
+    height: 300px;
+    background: #B22D2B
+}
+
 .container-side-one{
     display: flex;
     flex-direction: column;
@@ -71,7 +90,7 @@
 
 
 h1 {
-    font-size: 3vw;
+    font-size: 2vw;
     color: white;
     margin-bottom: 1vw;
 }
@@ -80,6 +99,12 @@ h2 {
     font-size: 2vw;
     color: white;
 }
+
+h3 {
+    font-size: 1.8vw;
+    color: white;
+}
+
 
 .register-btn-homePage {
     color: #e2d312;
@@ -92,4 +117,16 @@ h2 {
     width: 20vw;
     top: -6vw;
     position: relative;
+}
+.detail-box-two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 90%;
+    margin: 35px;
+}
+.footerImg {
+    height: 50%;
+    width: 60%;
 }
