@@ -17,6 +17,17 @@ $(".backToHomeBtn").click(function () {
     $("#loginPage").css('display', 'none')
     $("#registerForm").css('display', 'none')
 })
+//-------------login page------------
+$("#loginFormBtn").click(function () {
+    // fff
+
+
+    $("#homePage").css('display', 'none')
+    $("#homeNavbar").css('display', 'none')
+
+    $("#loginPage").css('display', 'block')
+})
+
 
 
 
