@@ -10,7 +10,7 @@
     <link rel="font" href="assets/font/css/all.css">
 
     <link rel="stylesheet" href="assets/style/homePage.css">
-
+    <link rel="stylesheet" href="assets/style/registerForm.css">
 
     <link rel="stylesheet" href="assets/">
     <link rel="stylesheet" href="assets/">
@@ -22,7 +22,7 @@
 
 <body>
 <header>
-    <nav style="display:block;" id="HomeNavbar" class="navbar navbar-expand-lg bg-info">
+    <nav style="display:block;" id="homeNavbar" class="navbar navbar-expand-lg bg-info">
         <div class="container-fluid">
             <i class="fa-solid text-light fs-2 fa-car me-2 ms-5"></i>
             <a style="display: block" class="navbar-brand fw-bolder fs-1 text-light  me-5"> Welcome </a>
@@ -110,10 +110,96 @@
         </div>
     </section>
 
+    <section style="display:none;" id="registerForm">
+        <div class="custom-container-two">
+
+            <div class="container-inside-one">
+                <div class="container-title d-flex">
+                    <button style="height:35px;margin-right: 25%" type="button"
+                            class="btn btn-outline-danger  backToHomeBtn">Back</button>
+
+                    <h3 class="fw-bold ">
+                        REGISTRATION FORM
+                    </h3>
+                </div>
+                <div class="sub-container">
+                    <div class="box-row-one">
+                        <div class="detail-container ">
+                            <div class="form-floating w-100">
+                                <input style="height: 10%;border: 1px solid gray" type="text" class="form-control "
+                                       id="register-form-name" placeholder="Chamith Dilshan">
+                                <label for="register-form-name">Full Name</label>
+                            </div>
+                            <div class="form-floating w-100">
+                                <input style="border: 1px solid gray" type="text" class="form-control" id="register-form-nic"
+                                       placeholder="200015200496">
+                                <label for="register-form-nic">NIC No</label>
+                            </div>
+                            <div class="form-floating w-100">
+                                <input style="border: 1px solid gray" type="email" class="form-control " id="register-form-email"
+                                       placeholder="name@example.com">
+                                <label for="register-form-email">Email </label>
+                            </div>
+                            <div class="form-floating w-100">
+                                <input style="border: 1px solid gray" type="text" class="form-control " id="register-form-mobile"
+                                       placeholder="075-8952052">
+                                <label for="register-form-mobile">Mobile</label>
+                            </div>
+                            <div class="form-floating w-100">
+                                <input style="border: 1px solid gray" type="date" class="form-control  " id="register-form-date"
+                                       disabled readonly>
+                                <label for="register-form-date">Register Date</label>
+                            </div>
+                        </div>
+                        <div class="detail-container">
+
+                            <div class="form-floating w-100  ">
+                                <input style="border: 1px solid gray" type="text" class="form-control  " id="register-form-address"
+                                       placeholder="Kalutara">
+                                <label for="register-form-address">Address</label>
+                            </div>
+                            <div class="form-floating w-100">
+                                <input style="border: 1px solid gray" type="text" class="form-control  " id="register-form-user-name"
+                                       placeholder="Chamith">
+                                <label for="register-form-user-name">User Name</label>
+                            </div>
+                            <div class="form-floating w-100">
+                                <input style="border: 1px solid gray" type="password" class="form-control  " id="register-form-password"
+                                       placeholder="Password">
+                                <label for="register-form-password">Password</label>
+                            </div>
+                            <div class="w-100">
+                                <label for="register-form-NIC-image" class="form-label ">ID Card Image</label>
+                                <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-NIC-image">
+                            </div>
+                            <div class=" w-100">
+                                <label for="register-form-License-image" class="form-label">License Card Image</label>
+                                <input style="border: 1px solid gray" class="form-control  " type="file"
+                                       id="register-form-License-image">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="box-row-two">
+                        <button id="registerNowBtn" type="button" class="btn btn-outline-warning register-form-btn" >Register
+                        </button>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
 </main>
 
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+
+<script src="assets/js/homeController.js"></script>
 
 
 </body>
