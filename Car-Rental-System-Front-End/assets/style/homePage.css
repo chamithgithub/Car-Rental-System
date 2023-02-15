@@ -1,0 +1,95 @@
+
+.custom-container-one {
+    display: flex;
+    flex-wrap: wrap;
+    height: 51vw;
+    justify-content: center;
+}
+
+.container-one {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 101vw;
+    height: 41vw;
+    background: #39d01c;
+}
+.container-side-one{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+    /*border-bottom:3px solid gray;*/
+}
+.home-car-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95%;
+    width: 100%;
+    margin-top: 2%;
+}
+
+
+.sub-container-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 64vw;
+    height: 40vw;
+    position: relative;
+    margin-bottom: -3vw;
+    margin-right: -23vw;
+}
+
+.sub-container-two {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    width: 51vw;
+    height: 50vw;
+}
+
+.header-title {
+    color: #FFFFFF;
+    font-size: 5vw;
+    font-weight: bolder;
+    margin-bottom: 8vw;
+}
+
+
+.background-image {
+    height: 45vw;
+    margin-bottom: -7vw;
+    margin-left: -29vw;
+}
+
+
+
+h1 {
+    font-size: 3vw;
+    color: white;
+    margin-bottom: 1vw;
+}
+
+h2 {
+    font-size: 2vw;
+    color: white;
+}
+
+.register-btn-homePage {
+    color: #e2d312;
+    background: #0c34af;
+    border-radius: 10px;
+    font-size: 2vw;
+    margin-top: 10vw;
+    margin-left: 72vw;
+    font-weight: bolder;
+    width: 20vw;
+    top: -6vw;
+    position: relative;
+}
