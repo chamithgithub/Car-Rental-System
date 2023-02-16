@@ -1,6 +1,5 @@
 package lk.easyCar.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -18,7 +17,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement//aspect (Manage all my transactions automatically using transaction manager)
-@EnableJpaRepositories//link dao classes
+@EnableJpaRepositories(basePackages = "lk.easyCar.repo")//link dao classes
 
 public class JPAConfig {
 
