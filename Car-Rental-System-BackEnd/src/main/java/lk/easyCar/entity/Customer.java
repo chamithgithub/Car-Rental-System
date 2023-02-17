@@ -5,9 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.sql.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -28,5 +31,7 @@ public class Customer {
     private String email;
     private Date register_date;
 
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+    private List<CarReservation> reservations;
 
 }
