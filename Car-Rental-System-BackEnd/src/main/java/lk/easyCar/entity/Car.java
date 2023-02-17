@@ -33,7 +33,12 @@ public class Car {
     private BigDecimal waiver_payment;
     private String status;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "img_id")
+    private CarImgDetail carImgDetail;
 
+    @OneToMany(mappedBy = "car",cascade = CascadeType.ALL)
+    private List<CarReservation> reservations;
 
 
 }
