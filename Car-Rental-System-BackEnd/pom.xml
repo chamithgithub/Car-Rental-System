@@ -107,5 +107,12 @@
             <scope>test</scope>
         </dependency>
 
+<!--        security-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>5.6.1</version>
+        </dependency>
+
     </dependencies>
 </project>

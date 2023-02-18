@@ -6,6 +6,7 @@ import lk.easyCar.repo.CustomerRepo;
 import lk.easyCar.service.CustomerService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -22,12 +23,18 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
      ModelMapper mapper;
 
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
     @Override
     public void saveCustomer(CustomerDTO customerDTO) {
-        if (customerRepo.existsById(customerDTO.getNic())) {
-            throw new RuntimeException("Customer "+customerDTO.getNic()+" Already Exist..!");
+        if (!customerRepo.existsById(customerDTO.getNic())) {
+            String password = passwordEncoder.encode(customerDTO.getPassword());
+            customerDTO.setPassword(password);
+            customerRepo.save(mapper.map(customerDTO, Customer.class));
+        } else {
+            throw new RuntimeException(" Already .!");
         }
-        customerRepo.save(mapper.map(customerDTO, Customer.class));
     }
 
 }

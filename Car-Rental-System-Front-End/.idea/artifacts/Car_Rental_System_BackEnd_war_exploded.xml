@@ -51,6 +51,8 @@
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.19.4" />
           <element id="library" level="project" name="Maven: org.modelmapper:modelmapper:3.1.0" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.3" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.6.1" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-crypto:5.6.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">
