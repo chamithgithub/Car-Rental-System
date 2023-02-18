@@ -1,5 +1,4 @@
 
-
 //-------------register page
 $(".getStartBtn").click(function () {
     $("#homePage").css('display', 'none')
@@ -19,7 +18,7 @@ $(".backToHomeBtn").click(function () {
 })
 //-------------login page------------
 $("#loginFormBtn").click(function () {
-    // fff
+    //
 
 
     $("#homePage").css('display', 'none')
