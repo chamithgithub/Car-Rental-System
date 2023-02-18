@@ -29,4 +29,6 @@ public class CarDTO {
     private BigDecimal waiver_payment;
     private String status;
 
+    private CarImgDetailDTO carImgDetail;
+
 }
