@@ -280,18 +280,35 @@
                 </div>
 
 
-                <div class="admin-dashboard-sub-container">
-                    <div class="div-1">
+                <div style="display: block;margin-top:5%" id="adminCustomer" class="admin-dashboard-sub-container">
+                    <div class="sub-detail-container">
+                        <h4 class="text-center mt-1 fw-bold">All Customers</h4>
+                        <div style="width: 100%;height: 80%;"
+                             class=" h-90 table-wrapper-scroll-y my-custom-scrollbar  border-radius-shadow ">
 
+                            <table class="table table-hover table-borderless">
+                                <thead class="table-dark text-center">
+                                <tr>
+                                    <th scope="col">NIC</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Mobile</th>
+                                    <th scope="col">Register Date</th>
+                                </tr>
+                                </thead>
+                                <tbody id="admin-customer-table">
 
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w-100 d-flex justify-content-end mt-3">
+                            <button id="admin-customer-viewBtn" class=" btn btn-outline-primary fw-bold" data-bs-toggle="modal"
+                                    data-bs-target="#viewCustomerModel" disabled>View Details
+                            </button>
+                        </div>
                     </div>
-                    <div class="div-2">
 
 
-                    </div>
-                    <div class="div-3 ">
-
-                    </div>
                 </div>
 
 
