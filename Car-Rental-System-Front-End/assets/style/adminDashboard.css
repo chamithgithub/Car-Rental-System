@@ -4,7 +4,7 @@
     height: 100vh;
     justify-content: space-around;
     align-items: center;
-    background-color: #5181f1;
+    background:url("../img/backgrond.jpg");
 }
 .admin-dashboard-sub-container{
     display: flex;
@@ -21,7 +21,9 @@
     width: 20%;
     height: 95%;
     align-items: normal;
-    box-shadow: 1px 1px 1px 1px #e51616;;
+    box-shadow: 1px 3px 1px 1px #e51616;;
+    background-color: #4e5a80;
+
 }
 .div_1{
     width: 100%;
@@ -53,23 +55,7 @@
     flex-direction: column;
 }
 
-.payment-column{
-    height: 90%;
-    width: 32%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
-.inside-payment-container{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
 .text-fields-max-width{
     width: 85%;
 }

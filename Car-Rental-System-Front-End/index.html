@@ -235,10 +235,12 @@
 
 <!--    </section>-->
 
+<!--                                   admin part                        -->
     <section style="display:block;" id="admin">
+
         <section id="adminDashboard">
             <div class="admin-dashboard-container position-fixed">
-
+<!--                adminMenu-->
                 <div id="adminMenu" class="admin-dashboard-menu-container">
 
                     <button id="adminDashboardBtn"
@@ -279,15 +281,15 @@
 
                 </div>
 
-
-                <div style="display: block;margin-top:5%" id="adminCustomer" class="admin-dashboard-sub-container">
+<!--                adminCustomer-->
+                <div style="display: none;margin-top:5%" id="adminCustomer" class="admin-dashboard-sub-container">
                     <div class="sub-detail-container">
                         <h4 class="text-center mt-1 fw-bold">All Customers</h4>
                         <div style="width: 100%;height: 80%;"
                              class=" h-90 table-wrapper-scroll-y my-custom-scrollbar  border-radius-shadow ">
 
-                            <table class="table table-hover table-borderless">
-                                <thead class="table-dark text-center">
+                            <table class="table table-hover table-bordered">
+                                <thead class="table-success text-center">
                                 <tr>
                                     <th scope="col">NIC</th>
                                     <th scope="col">Name</th>
@@ -297,6 +299,7 @@
                                 </tr>
                                 </thead>
                                 <tbody id="admin-customer-table">
+
 
                                 </tbody>
                             </table>
@@ -308,14 +311,100 @@
                         </div>
                     </div>
 
-
                 </div>
 
+<!--                adminDrivers-->
+                <div style="display:block;margin-top: 5%" id="adminDrivers" class="admin-dashboard-sub-container">
+                    <div class="sub-detail-container">
 
+                        <div class="w-100 d-flex justify-content-between">
+<!--                            Save btn-->
+                            <button id="enableSaveDriverBtn" style="display: block"
+                                    class="btn btn-outline-success h-50 w-25" data-bs-toggle="modal"
+                                    data-bs-target="#saveDriverModel">Save
+                            </button>
 
+                            <!--search Driver-->
+                            <form id="enableSearchDriverBtn" style="visibility:hidden;" class="d-flex h-50 w-50"
+                                  role="search">
+                                <input id="admin-driver-start-date" class="form-control me-2  " type="date" aria-label="Search">
+                                <input id="admin-driver-end-date" class="form-control me-2  " type="date" aria-label="Search">
+                                <button id="admin-driver-schedule-searchBtn" class="btn btn-outline-dark  " type="button">Search</button>
+                            </form>
+
+<!--                            Action-->
+                            <div class="btn-group d-flex ms-auto mb-5 w-25">
+                                <button type="button" class="btn btn-danger ">Action</button>
+
+                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" id="admin-driverBtn">All Drivers</a></li>
+                                    <li><a class="dropdown-item" id="admin-scheduleBtn">Driver Schedule</a></li>
+                                    <li><a class="dropdown-item" id="admin-scheduleCarBtn">Drive Car</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <h4 id="admin-all-drivers-title" style="display:block;" class="text-center mt-1 fw-bold">All
+                            Drivers</h4>
+
+                        <!--change view of driver table and button-->
+                        <h4 id="admin-all-driverSchedule-title" style="display:none;" class="text-center mt-1 fw-bold">
+                            Driver Schedule</h4>
+
+                        <!--admin-driver-table-->
+                        <div id="admin-driver-table" style="display:block;width: 100%;height: 80%;"
+                             class=" h-90 table-wrapper-scroll-y my-custom-scrollbar  border-radius-shadow ">
+
+                            <table class="table table-hover table-bordered  ">
+                                <thead class="table-success text-center">
+                                <tr>
+                                    <th scope="col">Driver NIC</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Mobile</th>
+                                    <th scope="col">Join Date</th>
+                                </tr>
+                                </thead>
+                                <tbody id="admin-all-drivers-table">
+
+                                </tbody>
+                            </table>
+                        </div>
+
+<!--                        admin-driver-schedule-table-->
+                        <div id="admin-driver-schedule-table" style="display:none;width: 100%;height: 80%;"
+                             class=" h-90 table-wrapper-scroll-y my-custom-scrollbar  border-radius-shadow ">
+
+                            <table class="table table-hover table-bordered  ">
+                                <thead class="table-dark text-center">
+                                <tr>
+                                    <th scope="col">Schedule ID</th>
+                                    <th scope="col">Driver Name</th>
+                                    <th scope="col">Start Time</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">End Date</th>
+                                </tr>
+                                </thead>
+                                <tbody id="admin-all-drivers-schedule-table">
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w-100 d-flex justify-content-end mt-3">
+                            <button id="admin-driver-viewDetailsBtn" style="display:block;" class=" btn btn-outline-primary fw-bold"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#updateDriverModel" disabled>View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-
 
         </section>
 
