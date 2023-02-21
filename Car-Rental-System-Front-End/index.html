@@ -658,7 +658,7 @@
     </section>
 
     <!--                                 customer part                        -->
-    <section style="display:block;" id="customer">
+    <section style="display:none;" id="customer">
 
         <section style="display: block" id="customerHome">
             <div class="customer-home-container">
@@ -841,6 +841,39 @@
         </section>
     </section>
 
+    <!--                                 driver part                        -->
+    <section style="display:block;" id="driver">
+        <div class="customer-res-container">
+            <div class="customer-res-sub__container">
+                <div class="mb-3 mt-5" >
+                    <button class="btn btn-outline-danger fs-5"> Weekly Schedule</button>
+
+                    <button style="display:none;margin-left: 20px" class="btn btn-outline-danger fs-5">Monthly Schedule
+                    </button>
+
+                </div>
+                <div class="customer-res-detail__container">
+                    <div class="w-100 h-100 table-wrapper-scroll-y my-custom-scrollbar  border-radius-shadow ">
+                        <table class="table table-hover table-bordered  ">
+                            <thead class="table-success text-center">
+                            <tr>
+                                <th scope="col">Reserve ID</th>
+                                <th scope="col">Start Time</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">End Date</th>
+                            </tr>
+                            </thead>
+                            <tbody id="driver-schedule">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 </main>
 
