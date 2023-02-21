@@ -459,7 +459,7 @@
                 </div>
 
 <!--                adminReservation-->
-                <div style="display:block;margin-top: 3%" id="adminReservation" class="admin-dashboard-sub-container ">
+                <div style="display:none;margin-top: 3%" id="adminReservation" class="admin-dashboard-sub-container ">
 
                     <div class="sub-detail-container">
 
@@ -503,6 +503,149 @@
                         </div>
                     </div>
                 </div>
+
+<!--                adminPayments-->
+                <div style="display:block;" id="adminPayments" class="admin-dashboard-sub-container">
+                    <div class="inside-payment-container d-flex ">
+                        <div class="payment-column  mt-auto p-4 w-50 border-radius-shadow ">
+                            <h2 class="d-flex justify-content-center align-items-center mb-5 w-100 text-dark mt-auto">Reservation Details</h2>
+
+                            <form class="d-flex justify-content-between mt-3 text-fields-max-width mb-4" role="search">
+                                <input id="admin-payment-reservation-searchText" class="form-control me-2" type="search" placeholder="Search Reservation ID"
+                                       aria-label="Search">
+                                <button id="admin-payment-searchBtn" class="btn btn-outline-info " type="button">Search</button>
+                            </form>
+
+                            <div class="text-fields-max-width">
+                                <label class="col-form-label fw-bold ">Customer Name:</label>
+                                <input id="admin-payment-customer-name" class="form-control mb-3 " type="text"
+                                       aria-label="Disabled input example" disabled readonly>
+                            </div>
+                            <div class="text-fields-max-width">
+                                <label class="col-form-label fw-bold ">Registration No:</label>
+                                <input id="admin-payment-registrationNo" class="form-control mb-3 " type="text"
+                                       aria-label="Disabled input example" disabled readonly>
+                            </div>
+                            <div class=" text-fields-max-width">
+                                <label class="col-form-label fw-bold">PickUp Date:</label>
+                                <input id="admin-payment-pickUp-date" class="form-control mb-3 " type="date"
+                                       aria-label="Disabled input example" disabled readonly>
+                            </div>
+                            <div class=" text-fields-max-width">
+                                <label class="col-form-label fw-bold">Return Date:</label>
+                                <input id="admin-payment-return-date" class="form-control mb-3 " type="date"
+                                       aria-label="Disabled input example" disabled readonly>
+                            </div>
+                            <div class=" text-fields-max-width">
+                                <label class="col-form-label fw-bold ">No Of Days:</label>
+                                <input id="admin-payment-noOf-date" class="form-control mb-3 " type="text"
+                                       aria-label="Disabled input example" disabled readonly>
+                            </div>
+                        </div>
+                        <div class="payment-column  mt-auto w-50  border-radius-shadow">
+                            <h2  class=" mb-3 d-flex justify-content-center align-items-center w-100 text-dark rounded-top mt-3">Payment Details</h2>
+                            <div style="height: 25px"></div>
+                            <div class="text-fields-max-width">
+                                <label class="col-form-label fw-bold ">Pay Date:</label>
+                                <input id="admin-payment-pay-date" class="form-control mb-3 " type="date"
+                                       aria-label="Disabled input example" disabled readonly>
+                            </div>
+                            <div class="text-fields-max-width">
+                                <label class="col-form-label fw-bold ">Bill ID:</label>
+                                <input id="admin-payment-billId" class="form-control mb-3 " type="text"
+                                       aria-label="Disabled input example" disabled readonly>
+                            </div>
+                            <div class=" text-fields-max-width">
+                                <label class="col-form-label fw-bold">Driver Fee:</label>
+                                <input id="admin-payment-driver-fee" class="form-control mb-3 " type="text"
+                                       aria-label="Disabled input example" disabled readonly>
+                            </div>
+                            <div class=" text-fields-max-width">
+                                <label class="col-form-label fw-bold">Total Km:</label>
+                                <input id="admin-payment-totalKm" class="form-control mb-3 " type="text"
+                                       aria-label="Disabled input example" >
+                            </div>
+                            <div class=" text-fields-max-width">
+                                <label class="col-form-label fw-bold mb-2">Damage Cost:</label>
+                                <input id="admin-payment-damage-cost" class="form-control" type="text"
+                                       aria-label="Disabled input example" >
+                            </div>
+                            <div class="mt-5 d-grid col-6 mt-xl-2 mx-auto text-fields-max-width mb-4">
+                                <button id="admin-payment-done-calculate" type="button" class="btn btn-outline-danger  mt-4 fw-bold">DONE
+                                </button>
+                            </div>
+                        </div>
+                        <div class="payment-column mt-auto w-50 border-radius-shadow">
+                            <div style="margin-top: 28px" class=" text-fields-max-width mb-1">
+                                <div class="col-5">
+                                    <div class="mb-1">
+                                        <label class="form-label fs-6 fw-bold">Refund(RS)</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="mb-2">
+                                        <input type="text" readonly class="form-control p-1 fs-6 fw-bolder mb-2"
+                                               id="admin-payment-refund" placeholder="00000.00">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" text-fields-max-width mb-1">
+                                <div class="col-5">
+                                    <div class="mb-1">
+                                        <label class="form-label fs-6 fw-bold">Total(RS)</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="mb-2">
+                                        <input type="text" readonly class="form-control p-1 fs-6 fw-bolder mb-2"
+                                               id="admin-payment-total" placeholder="00000.00">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" text-fields-max-width">
+                                <div class="col-5">
+                                    <div class="mb-1">
+                                        <label  class="form-label fs-6 fw-bold">Sub Total(RS)</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="mb-2">
+                                        <input type="text" readonly class="form-control p-1 fs-6 fw-bolder "
+                                               id="admin-payment-subTotal" placeholder="00000.00">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div  class=" text-fields-max-width">
+
+                                <div class="col">
+                                    <div class="mb-2 ">
+                                        <label class="form-label fw-bold">Discount</label>
+                                        <input id="admin-payment-discount" type="number" class="form-control" placeholder="10">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class=" mt-2 mb-2">
+                                        <label class="form-label fw-bold">Cash</label>
+                                        <input id="admin-payment-cash" type="number" class="form-control"  placeholder="0000.00">
+                                    </div>
+                                </div>
+                            </div>
+                            <div  class=" text-fields-max-width">
+                                <div class="mb-3">
+                                    <label  class="form-label fw-bold">Balance</label>
+                                    <input  type="number" class="form-control" id="admin-payment-balance" placeholder="0000.00"
+                                            disabled>
+                                </div>
+                                <div class="mb-4 mt-5 d-grid col-6 mt-xl-2 mx-auto w-100">
+                                    <button id="admin-payment-paidBtn" type="button" class="btn btn-outline-danger mt-4 fw-bold w-100">PAID
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </section>
