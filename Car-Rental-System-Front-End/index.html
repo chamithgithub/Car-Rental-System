@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/style/loginPage.css">
     <link rel="stylesheet" href="assets/style/adminDashboard.css">
     <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/customerPage.css">
 
     <link rel="stylesheet" href="assets/">
     <link rel="stylesheet" href="assets/">
@@ -46,8 +47,8 @@
 
 
 <main>
-    <!--                                   homePage part                        -->
-    <section style="display: block" id="homePage" >
+    <!--                                  homePage part                        -->
+    <section style="display: none" id="homePage" >
         <div class="custom-container-one">
             <div class="container-one">
                 <div class="sub-container-one">
@@ -112,7 +113,8 @@
 
         </div>
     </section>
-    <!--                                   registerForm part                    -->
+
+    <!--                                 registerForm part                    -->
     <section style="display:none;" id="registerForm">
         <div class="custom-container-two">
 
@@ -195,7 +197,8 @@
         </div>
 
     </section>
-    <!--                                   loginPage part                       -->
+
+    <!--                                 loginPage part                       -->
     <section style="display:none;" id="loginPage">
         <div class="login-container">
             <div class="login-inside-container-one">
@@ -237,7 +240,7 @@
 
     </section>
 
-    <!--                                   admin part                           -->
+    <!--                                 admin part                           -->
     <section style="display:none;" id="admin">
 
         <section id="adminDashboard">
@@ -654,6 +657,189 @@
 
     </section>
 
+    <!--                                 customer part                        -->
+    <section style="display:block;" id="customer">
+
+        <section style="display: block" id="customerHome">
+            <div class="customer-home-container">
+                <div class="customer-home-container-one">
+
+                    <div class="customer-home-sub-container-one">
+
+                        <div class="customer-home-detail-container justify-content-center bg-danger">
+                            <div class="form-floating w-75 mt-4 ">
+                                <input type="date" class="form-control border-secondary " id="customer-home-pickup">
+                                <label for="register-form-date">Date</label>
+                            </div>
+                            <div class="form-floating w-75 mt-3 ">
+                                <input type="date" class="form-control border-secondary" id="customer-home-return">
+                                <label for="register-form-date">Date</label>
+
+                            </div>
+                            <button id="customer-searchCarBtn" type="button"
+                                    class="btn  btn-outline-warning text-light mb-3 mt-3 ">Search Car
+                            </button>
+
+                        </div>
+                    </div>
+                    <div class="customer-home-sub-container-two">
+                        <h3 class="fs-1 fw-bold text-dark">Hire Deals</h3>
+
+                        <img class="customer-home-background-image" src="assets/img/20-features-in-car-rental-software-in-2020.jpg" alt=" car">
+                    </div>
+                </div>
+<div>
+
+</div>
+
+            </div>
+
+        </section>
+
+        <section style="display: none" id="customerReservation">
+
+            <div class="customer-res-container">
+                <div class="customer-res-sub__container">
+                    <div>
+                        <button id="customer-upcoming-reservationBtn" class="btn btn-outline-dark fs-5 me-2"> Upcoming Reservation</button>
+                        <button id="customer-pending-reservationBtn" class="btn btn-outline-dark fs-5 ms-2"> Pending Reservation</button>
+                        <button style="display:none;margin-left: 20px" class="btn btn-outline-dark fs-5"> Previous
+                            Reservation
+                        </button>
+
+                    </div>
+                    <div class="customer-res-detail__container">
+                        <div class="card text-bg-light border-radius-shadow w-50" style="height: 80%;">
+                            <div class="card-header border-2 fw-bold">Reservation Status
+                                <span  id="customer-reservationStatus" class=" ms-3 fw-bold ">No Reservation</span></div>
+                            <div class="card-body text-center">
+                                <h5  class="card-title text-center fw-bolder">Reservation ID : <span id="customer-reservation-id"> </span></h5>
+                                <br>
+                                <p class="card-title fs-5 fw-bold">Name : <span id="customer-reservation-name"></span></p>
+                                <p class="card-title fs-5 fw-bold">Vehicle No : <span id="customer-reservation-vehicle"></span></p>
+                                <p class="card-title fs-5 fw-bold">Pickup venue : <span id="customer-reservation-venue"></span></p>
+                                <p class="card-title fs-5 fw-bold">pickup Time : <span id="customer-reservation-pickUp-time"></span></p>
+                                <p class="card-title fs-5 fw-bold">Pickup Date : <span id="customer-reservation-pickUp-date"></span></p>
+                                <p class="card-title fs-5 fw-bold">Return Date : <span id="customer-reservation-return-date"></span></p>
+                                <p class="card-title fs-5 fw-bold">No Of Days : <span id="customer-reservation-days"></span></p>
+
+                            </div>
+                        </div>
+                        <div class="card text-bg-light border-radius-shadow w-25" style="margin-right: 5%;height: 80%">
+                            <div class="card-header fw-bold">Driver Status <span id="driverStatus" class="ms-3 fw-bold">Not Required</span></div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-center fw-bolder">Driver ID : <span id="customer-reservation-driver-id"> </span></h5>
+                                <br>
+                                <p class="card-title fs-5 fw-bold">Name : <span id="customer-reservation-driver-name">   </span></p>
+                                <p class="card-title fs-5 fw-bold">License No : <span id="customer-reservation-driver-license"> </span></p>
+                                <p class="card-title fs-5 fw-bold">Join Date : <span id="customer-reservation-driver-joinDate"> </span></p>
+                                <p class="card-title fs-5 fw-bold">Mobile : <span id="customer-reservation-driver-mobile"> </span></p>
+
+
+                            </div>
+                        </div>
+                        <div style="height: 80%;width: 15%" class="border-radius-shadow">
+
+                            <table class="table table-hover table-borderless  ">
+                                <thead style="background-color: #f2f2f2;border-bottom: 1px solid #e9e9e9" class="text-center">
+                                <tr >
+                                    <th class="text-center" scope="col">Reservations</th>
+                                </tr>
+                                </thead>
+                                <tbody id="customer-upcoming-reservation-table">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-light me-1">
+                            <i class="fa-solid fs-2 fa-circle-arrow-left"></i>
+                        </button>
+                        <button type="button" class="btn btn-light ms-1">
+                            <i class="fa-solid fs-2 fa-circle-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </section>
+
+        <section style="display: none" id="customerProfile">
+            <div class="customer-pro-container">
+                <p class="fs-2 fw-bold text-black border-5 border-dark">Update Profile</p>
+                <div class="customer-pro-sub-container border-radius-shadow">
+                    <div class="customer-pro-detail-container-one">
+                        <button id="customerInformationBtn" type="button"
+                                class="btn btn-outline-dark w-75 fw-bold register-form-btn mt-5">
+                            Information
+                        </button>
+                        <button id="customerChangePasswordBtn" type="button"
+                                class="btn btn-outline-dark w-75 fw-bold register-form-btn">Password
+                        </button>
+
+                    </div>
+
+                    <div class="customer-pro-detail-container-two">
+                        <div id="customerProfileUpdateDetail" style="display: block" class="customer-pro-box">
+                            <div class="customer-pro-box-row-one">
+                                <div class="customer-pro-detail-container">
+                                    <div class="form-floating w-100">
+                                        <input style="border: 1px solid gray" type="text" class="form-control " id="customer-profile-nic" disabled readonly>
+                                        <label for="customer-profile-nic">NIC No</label>
+                                    </div>
+                                    <div class="form-floating w-100">
+                                        <input style="height: 10%;border: 1px solid gray" type="text" class="form-control "
+                                               id="customer-profile-name" >
+                                        <label for="customer-profile-name">Full Name</label>
+                                    </div>
+
+                                    <div class="form-floating w-100">
+                                        <input style="border: 1px solid gray" type="email" class="form-control " id="customer-profile-email">
+                                        <label for="customer-profile-email">Email </label>
+                                    </div>
+                                    <div class="form-floating w-100">
+                                        <input style="border: 1px solid gray" type="number" class="form-control " id="customer-profile-mobile">
+                                        <label for="customer-profile-mobile">Mobile</label>
+                                    </div>
+                                </div>
+                                <div class="customer-pro-detail-container mt-2 ">
+                                    <div class="form-floating w-100 ">
+                                        <input style="border: 1px solid gray" type="text" class="form-control" id="customer-profile-address">
+                                        <label for="customer-profile-address">Address</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="customer-pro-box-row-two">
+                                <button id="customer-updateBtn" type="button" class="btn btn-dark register-form-btn mt-5 w-25">Save</button>
+
+                            </div>
+                        </div><!--Display block Information of customer-->
+
+                        <div id="customerProfileChangePassword" style="display:none;margin-right:200px ">
+                            <h2 class="text-black mb-5">Change Password</h2>
+                            <div style="width: 450px; margin-bottom: 20px;" class="form-floating ">
+                                <input type="password" class="form-control border-secondary"
+                                       id="customer-profile-current-password">
+                                <label for="customer-profile-current-password">Current Password</label>
+                            </div>
+                            <div class="form-floating w-100">
+                                <input type="password" class="form-control border-secondary"
+                                       id="customer-profile-new-password">
+                                <label for="customer-profile-new-password">New Password</label>
+                            </div>
+                            <button id="btnChangePassword" type="button" class="btn btn-dark register-form-btn mt-5 w-20">Change</button>
+
+                        </div><!--Display block change Password of customer-->
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </section>
 
 
 </main>
