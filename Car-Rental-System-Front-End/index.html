@@ -305,7 +305,7 @@
                             </table>
                         </div>
                         <div class="w-100 d-flex justify-content-end mt-3">
-                            <button id="admin-customer-viewBtn" class=" btn btn-outline-primary fw-bold" data-bs-toggle="modal"
+                            <button id="admin-customer-viewBtn" class=" btn btn-outline-info fw-bold" data-bs-toggle="modal"
                                     data-bs-target="#viewCustomerModel" disabled>View Details
                             </button>
                         </div>
@@ -314,26 +314,13 @@
                 </div>
 
 <!--                adminDrivers-->
-                <div style="display:block;margin-top: 5%" id="adminDrivers" class="admin-dashboard-sub-container">
+                <div style="display:none;margin-top: 5%" id="adminDrivers" class="admin-dashboard-sub-container">
                     <div class="sub-detail-container">
 
-                        <div class="w-100 d-flex justify-content-between">
-<!--                            Save btn-->
-                            <button id="enableSaveDriverBtn" style="display: block"
-                                    class="btn btn-outline-success h-50 w-25" data-bs-toggle="modal"
-                                    data-bs-target="#saveDriverModel">Save
-                            </button>
+                        <div class="w-100 d-flex ">
+                            <!--Action-->
 
-                            <!--search Driver-->
-                            <form id="enableSearchDriverBtn" style="visibility:hidden;" class="d-flex h-50 w-50"
-                                  role="search">
-                                <input id="admin-driver-start-date" class="form-control me-2  " type="date" aria-label="Search">
-                                <input id="admin-driver-end-date" class="form-control me-2  " type="date" aria-label="Search">
-                                <button id="admin-driver-schedule-searchBtn" class="btn btn-outline-dark  " type="button">Search</button>
-                            </form>
-
-<!--                            Action-->
-                            <div class="btn-group d-flex ms-auto mb-5 w-25">
+                            <div class="btn-group d-flex  mb-5 w-25">
                                 <button type="button" class="btn btn-danger ">Action</button>
 
                                 <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
@@ -346,6 +333,13 @@
                                     <li><a class="dropdown-item" id="admin-scheduleCarBtn">Drive Car</a></li>
                                 </ul>
                             </div>
+
+<!--                            Save btn-->
+                            <button id="enableSaveDriverBtn"  style="display: block"
+                                    class="btn btn-outline-success ms-auto  h-50 w-25" data-bs-toggle="modal"
+                                    data-bs-target="#saveDriverModel">Add Driver
+                            </button>
+
 
                         </div>
 
@@ -396,12 +390,72 @@
                             </table>
                         </div>
                         <div class="w-100 d-flex justify-content-end mt-3">
-                            <button id="admin-driver-viewDetailsBtn" style="display:block;" class=" btn btn-outline-primary fw-bold"
+                            <button id="admin-driver-viewDetailsBtn" style="display:block;" class=" btn btn-outline-info fw-bold"
                                     data-bs-toggle="modal"
                                     data-bs-target="#updateDriverModel" disabled>View Details
                             </button>
                         </div>
                     </div>
+                </div>
+
+<!--                adminCars-->
+                <div style="display:block;margin-top: 5% " id="adminCars" class="admin-dashboard-sub-container ">
+
+                    <div class="sub-detail-container">
+                        <div class="w-100 d-flex justify-content-between">
+
+                            <div class="btn-group d-flex  mb-5 w-25">
+                                <button type="button" class="btn btn-danger ">Action</button>
+                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" id="admin-car-underMaintain">Under Maintaining</a></li>
+                                    <li><a class="dropdown-item" id="admin-car-needMaintain">Need Maintain</a></li>
+                                    <li><a class="dropdown-item" id="admin-car-available">Available</a></li>
+                                    <li><a class="dropdown-item" id="admin-car-unavailable">Unavailable</a></li>
+                                </ul>
+                            </div>
+
+                            <button class="btn btn-outline-success ms-auto h-50 w-25" data-bs-toggle="modal"
+                                    data-bs-target="#saveCarModel">Add Car
+                            </button>
+
+                        </div>
+
+                        <h4 id="admin-all-cars-title" class="text-center mt-1 fw-bold">All Cars</h4>
+
+
+
+                        <div style="width: 100%;height: 80%;"
+                             class=" h-90 table-wrapper-scroll-y my-custom-scrollbar  border-radius-shadow ">
+
+                            <table class="table table-hover table-bordered ">
+                                <thead class="table-success text-center">
+                                <tr>
+                                    <th scope="col">Vehicle Number</th>
+                                    <th scope="col">Brand</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Transmission</th>
+                                    <th scope="col">Fuel Type</th>
+                                </tr>
+                                </thead>
+                                <tbody id="admin-cars-table">
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w-100 d-flex justify-content-end mt-3">
+
+                            <button id="viewButton" style="display:block;" class=" btn btn-outline-info fw-bold"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#updateCarModel" disabled>View Details
+                            </button>
+
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
