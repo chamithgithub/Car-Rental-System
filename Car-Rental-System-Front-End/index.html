@@ -25,7 +25,7 @@
 
 <body>
 <header>
-    <nav style="display:block;" id="homeNavbar" class="navbar navbar-expand-lg bg-dark">
+    <nav style="display:none;" id="homeNavbar" class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
             <i class="fa-solid text-light fs-2  me-2 ms-5"></i>
             <h3 style="display: block" class="navbar-brand fw-bolder fs-1 text-light  me-5"> Welcome </h3>
@@ -48,7 +48,7 @@
 
 <main>
     <!--                                  homePage part                        -->
-    <section style="display: block" id="homePage" >
+    <section style="display: none" id="homePage" >
         <div class="custom-container-one">
             <div class="container-one">
                 <div class="sub-container-one">
@@ -67,9 +67,9 @@
                     <img class="background-image" src="assets/img/bg.png" alt="img"/>
                 </div>
             </div>
+                <div class="rentModel">
 
-            <div></div>
-
+                </div>
             <div class="container-two">
 
                 <div class="detail-box-one">
@@ -82,9 +82,7 @@
                 </div>
 
             </div>
-
-
-                <div class="container-three">
+            <div class="container-three">
                     <div class="detail-box-two">
                         <img class="footerImg" src="assets/img/client.png " alt="user-img"/>
                         <h1 class="h1">5K+</h1>
@@ -404,7 +402,7 @@
                 </div>
 
 <!--                adminCars-->
-                <div style="display:block;margin-top: 5% " id="adminCars" class="admin-dashboard-sub-container ">
+                <div style="display:none;margin-top: 5% " id="adminCars" class="admin-dashboard-sub-container ">
 
                     <div class="sub-detail-container">
                         <div class="w-100 d-flex justify-content-between">
@@ -651,6 +649,105 @@
                     </div>
                 </div>
 
+<!--                adminDailySummary-->
+                <div style="display:block;margin-top:3%" id="adminDailySummary" class="admin-dashboard-sub-container">
+                    <div class="div_1">
+                        <div class="card text-danger mb-3 mt-3 " style="width: 23%;height: 100%;">
+                            <div style="font-size: 1vw" class="card-header fw-bold text-center bg-warning">DAILY INCOME</div>
+                            <div class="card-body">
+                                <h6 style="font-size: 1.2vw" class="card-title text-center ">LKR</h6>
+                                <h6 id="admin-daily-income" style="font-size:2vw" class="card-text text-center ">1000</h6>
+                            </div>
+                        </div>
+                        <div class="card text-danger mb-3 mt-3 " style="width: 23%;height: 100%;">
+                            <div style="font-size: 1vw" class="card-header fw-bold text-center bg-warning">WEEKLY INCOME</div>
+                            <div class="card-body">
+                                <h6 style="font-size: 1.2vw" class="card-title text-center ">LKR</h6>
+                                <h6 id="admin-weekly-income" style="font-size:2vw" class="card-text text-center ">2000</h6>
+                            </div>
+                        </div>
+                        <div class="card text-danger mb-3 mt-3 " style="width: 23%;height: 100%;">
+                            <div style="font-size: 1vw" class="card-header fw-bold text-center bg-warning">MONTHLY INCOME</div>
+                            <div class="card-body">
+                                <h6 style="font-size: 1.2vw" class="card-title text-center ">LKR</h6>
+                                <h6 id="admin-Monthly-income" style="font-size:2vw" class="card-text text-center ">3000</h6>
+                            </div>
+                        </div>
+                        <div class="card  text-danger mb-3 mt-3  " style="width: 23%;height: 100%; ">
+                            <div style="font-size: 1vw;" class="card-header bg-warning fw-bold text-center">ANNUALLY INCOME</div>
+                            <div class="card-body">
+                                <h6 style="font-size: 1.2vw" class="card-title text-center ">LKR</h6>
+                                <h6 id="admin-Yearly-income" style="font-size:2vw" class="card-text   text-center  ">4000</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div_2">
+                        <div class="card  text-black mb-3 mt-3 " style="width: 20%;height: 70%">
+                            <div style="font-size: 1.1vw" class="card-header fw-bold text-center bg-info">Available Cars</div>
+                            <div class="card-body">
+                                <h6 id="admin-daily-available-cars" style="font-size: 2vw" class="card-title text-center text-success">50</h6>
+                            </div>
+                        </div>
+                        <div class="card  text-black mb-3 mt-3 " style="width: 20%;height: 70%">
+                            <div style="font-size: 1.1vw" class="card-header fw-bold text-center bg-info">Rental Cars</div>
+                            <div class="card-body">
+                                <h6 id="admin-daily-rental-cars" style="font-size: 2vw" class="card-title text-center text-danger">00</h6>
+                            </div>
+                        </div>
+                        <div class="card  text-black mb-3 mt-3 " style="width: 20%;height: 70%; ">
+                            <div style="font-size: 1.1vw" class="card-header fw-bold text-center bg-info">Available Drivers
+                            </div>
+                            <div class="card-body">
+                                <h6 id="admin-daily-available-drivers" style="font-size: 2vw" class="card-title text-center text-success">40</h6>
+                            </div>
+                        </div>
+                        <div class="card  text-black mb-3 mt-3 " style="width: 20%;height: 70%; ">
+                            <div style="font-size: 1.1vw" class="card-header fw-bold text-center bg-info">Occupied Drivers</div>
+                            <div class="card-body">
+                                <h6 id="admin-daily-occupied-cars" style="font-size: 2vw" class="card-title text-center text-danger">00</h6>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="div_3 ">
+                        <div style="width: 45%;"
+                             class=" h-100 table-wrapper-scroll-y my-custom-scrollbar   ">
+                            <h5 class="text-center mt-1">Today Reservation</h5>
+
+                            <table class="table table-hover table-bordered  ">
+                                <thead class="table-success text-center ">
+                                <tr>
+                                    <th scope="col">Reservation ID</th>
+                                    <th scope="col">Registration No</th>
+                                    <th scope="col">Customer ID</th>
+                                </tr>
+                                </thead>
+                                <tbody id="admin-daily-reservation-table">
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="width: 45%;"
+                             class=" h-100 table-wrapper-scroll-y my-custom-scrollbar   ">
+                            <h5 class="text-center mt-1">Last Payments</h5>
+                            <table class="table table-hover table-bordered ">
+                                <thead class="table-success text-center">
+                                <tr>
+                                    <th scope="col">Bill ID</th>
+                                    <th scope="col">Reserve ID</th>
+                                    <th scope="col">Pay Date</th>
+                                    <th scope="col">Amount</th>
+                                </tr>
+                                </thead>
+                                <tbody id="admin-daily-payment-table">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
 
         </section>
@@ -874,6 +971,9 @@
             </div>
         </div>
     </section>
+
+    <!--                                 logout part                        -->
+
 
 </main>
 
