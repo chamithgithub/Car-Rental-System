@@ -306,5 +306,27 @@ $("#customerChangePasswordBtn").click(function () {
 
 
 
+//----------User Logout
+$("#logOutBtn").click(function () {
+
+    $("#customer").css("display", "none")
+    $("#customerNavbar").css("display", "none")
+
+    $("#driverNavBar").css("display", "none")
+    $("#driver").css("display", "none")
+
+    $("#admin").css("display", "none")
+    $("#adminNavBar").css("display", "none")
+
+    $("#homePage").css("display", "block")
+    $("#homeNavbar").css("display", "block")
+
+
+})
+
+
+
+
+
 
 
