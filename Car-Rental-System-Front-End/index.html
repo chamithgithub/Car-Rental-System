@@ -410,8 +410,16 @@
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     <li><a class="dropdown-item" id="admin-driverBtn">All Drivers</a></li>
                                     <li><a class="dropdown-item" id="admin-scheduleBtn">Driver Schedule</a></li>
-                                    <li><a class="dropdown-item" id="admin-scheduleCarBtn">Drive Car</a></li>
+<!--                                    <li><a class="dropdown-item" id="admin-scheduleCarBtn">Drive Car</a></li>-->
                                 </ul>
+
+                                <!--search Driver-->
+                                <form id="enableSearchDriverBtn" style="visibility:hidden;" class="d-flex h-50 w-50"
+                                      role="search">
+                                    <input id="admin-driver-start-date" class="form-control me-2  " type="date" aria-label="Search">
+                                    <input id="admin-driver-end-date" class="form-control me-2  " type="date" aria-label="Search">
+                                    <button id="admin-driver-schedule-searchBtn" class="btn btn-outline-dark  " type="button">Search</button>
+                                </form>
                             </div>
 
 <!--                            Save btn-->
@@ -421,12 +429,14 @@
                             </button>
 
 
+
                         </div>
+
+                        <!--change view of driver table and button header-->
 
                         <h4 id="admin-all-drivers-title" style="display:block;" class="text-center mt-1 fw-bold">All
                             Drivers</h4>
 
-                        <!--change view of driver table and button-->
                         <h4 id="admin-all-driverSchedule-title" style="display:none;" class="text-center mt-1 fw-bold">
                             Driver Schedule</h4>
 
