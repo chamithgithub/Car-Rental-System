@@ -118,6 +118,20 @@ function driverLogin(data) {
 
 }
 
+//---------admin Login
+function adminLogin(data) {
+    $("#loginPage").css("display", "none")
+    $("#admin").css("display", "block")
+
+    $("#adminDailySummary").css("display", "block")
+    $("#adminCars").css("display", "none")
+    $("#adminReservation").css("display", "none")
+    $("#adminDrivers").css("display", "none")
+    $("#adminCustomer").css("display", "none")
+    $("#adminPayments").css("display", "none")
+
+
+}
 
 
 
