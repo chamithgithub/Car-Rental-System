@@ -65,12 +65,12 @@ $(".getStartBtn").click(function () {
     $("#loginPage").css("display", "none")
     $("#admin").css("display", "block")
 
-    $("#adminDailySummary").css("display", "none")
+    $("#adminDailySummary").css("display", "block")
     $("#adminCars").css("display", "none")
     $("#adminReservation").css("display", "none")
     $("#adminDrivers").css("display", "none")
     $("#adminCustomer").css("display", "none")
-    $("#adminPayments").css("display", "block")
+    $("#adminPayments").css("display", "none")
 })
 
 //-------------Back Btn in Login & Register Page
@@ -91,6 +91,24 @@ $("#loginFormBtn").click(function () {
 
     $("#loginPage").css('display', 'block')
 })
+
+
+
+//---------Customer Login
+function customerLogin(data) {
+    customer = data
+    $("#loginPage").css("display", "none")
+    $("#customer").css("display", "block")
+    $("#customerNavbar").css("display", "block")
+
+    $("#customer-profile-nic").val(data.nic)
+    $("#customer-profile-name").val(data.customer_name)
+    $("#customer-profile-email").val(data.email)
+    $("#customer-profile-address").val(data.address)
+    $("#customer-profile-mobile").val(data.mobile)
+
+}
+
 
 
 
