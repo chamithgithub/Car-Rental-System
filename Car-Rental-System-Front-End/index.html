@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Easy_car_rental_system</title>
     <link rel="icon" href="./assets/img/icon.jpg">
 
@@ -25,7 +26,7 @@
 
 <body>
 <header>
-    <nav style="display:none;" id="homeNavbar" class="navbar navbar-expand-lg bg-dark">
+    <nav style="display:flex;" id="homeNavbar" class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
             <i class="fa-solid text-light fs-2  me-2 ms-5"></i>
             <h3 style="display: block" class="navbar-brand fw-bolder fs-1 text-light  me-5"> Welcome </h3>
@@ -42,13 +43,87 @@
 
         </div>
     </nav>
+    <nav style="display:block;" id="customerNavbar" class="navbar navbar-expand-lg bg-dark ">
+        <div class="container-fluid">
+            <img src="./assets/img/icon.jpg "  width="65" height="55">
+            <h3 class="navbar-brand " > Easy Car Rental System </h3>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav"
+                    aria-expanded="false" aria-label="fa-align-justify.svg">
+                <i class="fa-solid fa-align-justify fs-4 mt-1 me-3"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav  mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <button id="dashboardBtn" class="bg-transparent fw-bold border-0">
+                            <a id="customerHomeBtn" class="nav-link text-secondary fs-5 me-3 ">Home</a>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="customerReservationBtn" class="bg-transparent fw-bold border-0">
+                            <a class="nav-link text-secondary fs-5 me-3 ">Reservation</a>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="customerAccountBtn" class="bg-transparent fw-bold border-0">
+                            <a class="nav-link text-secondary fs-5 me-3">My Account</a>
+                        </button>
+                    </li>
+                </ul>
+                <span class="navbar-text me-5">
+                    <button type="button" class="btn btn-outline-warning fw-bold   " data-bs-toggle="modal"
+                            data-bs-target="#logoutModel">Log Out</button>
+                    </span>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+<!--        <nav class="navbar navbar-expand-lg bg-light fixed-top">-->
+<!--            <div class="container-fluid shadow p-2 mb-2 bg-body rounded">-->
+<!--                <img src="./assets/img/icon.jpg" width="75" height="75">-->
+<!--                <p class="navbar-brand">POS System</p>-->
+
+<!--                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"-->
+<!--                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"-->
+<!--                        aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                    <span class="fa-icons"></span>-->
+<!--                </button>-->
+
+
+<!--                <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--                        <li class="nav-item">-->
+<!--                            <a id="btn_To_Home" class="nav-link active link-primary" href="#">Home</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a id="btn_To_Customer" class="nav-link active link-primary" href="#">Customer</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a id="btn_To_Item" class="nav-link active link-primary" href="#">Item</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a id="btn_To_Orders" class="nav-link active link-primary" href="#">Order Details</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a id="btn_To_placeOrders" class="nav-link active link-primary" href="#">place Order</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
 
 </header>
 
 
 <main>
     <!--                                  homePage part                        -->
-    <section style="display: none" id="homePage" >
+    <section style="display: block" id="homePage" >
         <div class="custom-container-one">
             <div class="container-one">
                 <div class="sub-container-one">
