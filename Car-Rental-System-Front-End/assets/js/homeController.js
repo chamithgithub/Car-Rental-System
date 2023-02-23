@@ -60,18 +60,20 @@ $(".getStartBtn").click(function () {
     // $("#registerForm").css('display', 'block')
 
     // trail
-    $("#homePage").css('display', 'none')
-    $("#admin").css("display", "block")
-    $("#adminNavBar").css("display", "block")
-    $("#homeNavbar").css("display", "none")
+
+     $("#homePage").css('display', 'none')
+     $("#homeNavbar").css('display', 'none')
 
 
-    $("#adminDailySummary").css("display", "block")
-    $("#adminCars").css("display", "none")
-    $("#adminReservation").css("display", "none")
-    $("#adminDrivers").css("display", "none")
-    $("#adminCustomer").css("display", "none")
-    $("#adminPayments").css("display", "none")
+        $("#customerReservation").css("display", "none")
+        $("#customerProfile").css("display", "none")
+
+        $("#customer").css("display", "block")
+    $("#customerNavbar").css("display", "block")
+
+
+
+
 })
 
 //-------------Back Btn in Login & Register Page
@@ -256,28 +258,44 @@ $("#adminPaymentBtn").click(function () {
 
 
 
+//----------------customer page nav
+//---Home
+$("#customerHomeBtn").click(function () {
+    $("#customerReservation").css("display", "none")
+    $("#customerProfile").css("display", "none")
+
+    $("#customerHome").css("display", "block")
+})
+
+//---Reserv
+$("#customerReservationBtn").click(function () {
+
+    $("#customerProfile").css("display", "none")
+    $("#customerHome").css("display", "none")
+    $("#customerReservation").css("display", "block")
 
 
+})
 
+//---Acc
+$("#customerAccountBtn").click(function () {
+    $("#customerHome").css("display", "none")
+    $("#customerReservation").css("display", "none")
 
+    $("#customerProfile").css("display", "block")
+})
 
+//---------------customer Profile navigations
+$("#customerInformationBtn").click(function () {
+    $("#customerProfileChangePassword").css("display", "none")
 
-//----------User Logout
-$("#logOutBtn").click(function () {
+    $("#customerProfileUpdateDetail").css("display", "block")
+})
 
-    $("#customer").css("display", "none")
-    $("#customerNavbar").css("display", "none")
+$("#customerChangePasswordBtn").click(function () {
+    $("#customerProfileChangePassword").css("display", "block")
 
-    $("#driverNavBar").css("display", "none")
-    $("#driver").css("display", "none")
-
-    $("#admin").css("display", "none")
-    $("#adminNavBar").css("display", "none")
-
-    $("#homePage").css("display", "block")
-    $("#homeNavbar").css("display", "block")
-
-
+    $("#customerProfileUpdateDetail").css("display", "none")
 })
 
 
