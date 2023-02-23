@@ -109,6 +109,14 @@ function customerLogin(data) {
 
 }
 
+//---------Driver Login
+function driverLogin(data) {
+    $("#loginPage").css("display", "none")
+    $("#driverNavBar").css("display", "block")
+    $("#driver").css("display", "block")
+
+
+}
 
 
 
