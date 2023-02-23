@@ -550,6 +550,18 @@
                                     data-bs-toggle="modal"
                                     data-bs-target="#updateCarModel" disabled>View Details
                             </button>
+                            <button id="unavailableBtn" style="display:none;" class=" btn btn-outline-danger fw-bold">
+                                Mark As Unavailable
+                            </button>
+                            <button id="availableBtn" style="display:none;" class=" btn btn-outline-success fw-bold">
+                                Mark As Available
+                            </button>
+                            <button id="maintainBtn" style="display:none;" class=" btn btn-outline-secondary fw-bold">
+                                Mark As Maintain
+                            </button>
+                            <button id="underMaintainBtn" style="display:none;"
+                                    class=" btn btn-outline-warning fw-bold">Mark As under maintenance
+                            </button>
 
                         </div>
                     </div>
@@ -574,6 +586,8 @@
                         </div>
 
                         <h4 id="admin-reservation-title" class="text-center mt-1 fw-bold">Reservation</h4>
+                        <h4 id="admin-todayPickups-title" style="display: none" class="text-center mt-1 fw-bold">Today
+                            Pickups</h4>
 
 
                         <div style="width: 100%;height: 80%;"
@@ -598,6 +612,11 @@
                             <button id="admin-view-reservation" style="display:block;" class=" btn btn-outline-info fw-bold" data-bs-toggle="modal"
                                     data-bs-target="#viewReservationModel" disabled>View Reservation
                             </button>
+                            <button id="admin-update-reservation" style="display:none;"
+                                    class=" btn btn-outline-info fw-bold" data-bs-toggle="modal"
+                                    data-bs-target="#updateReservationModel" disabled>Update Reservation
+                            </button>
+
                         </div>
                     </div>
                 </div>
