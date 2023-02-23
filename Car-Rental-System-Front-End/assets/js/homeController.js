@@ -5,17 +5,16 @@ var baseUrl = "http://localhost:8080/Car_Rental_System/"
 $("#loginUserBtn").click(function () {
 
     // trail
-    $("#homeNavbar").css('display', 'block')
-        $("#loginPage").css("display", "none")
-        $("#admin").css("display", "block")
+    $("#loginPage").css("display", "none")
+    $("#admin").css("display", "block")
+    $("#adminNavBar").css("display", "block")
 
-        $("#adminDailySummary").css("display", "block")
-        $("#adminCars").css("display", "none")
-        $("#adminReservation").css("display", "none")
-        $("#adminDrivers").css("display", "none")
-        $("#adminCustomer").css("display", "none")
-        $("#adminPayments").css("display", "none")
-
+    $("#adminDailySummary").css("display", "block")
+    $("#adminCars").css("display", "none")
+    $("#adminReservation").css("display", "none")
+    $("#adminDrivers").css("display", "none")
+    $("#adminCustomer").css("display", "none")
+    $("#adminPayments").css("display", "none")
 
 
     //
@@ -61,10 +60,11 @@ $(".getStartBtn").click(function () {
     // $("#registerForm").css('display', 'block')
 
     // trail
-     $("#homePage").css('display', 'none')
-    $("#homeNavbar").css('display', 'block')
-    $("#loginPage").css("display", "none")
+    $("#homePage").css('display', 'none')
     $("#admin").css("display", "block")
+    $("#adminNavBar").css("display", "block")
+    $("#homeNavbar").css("display", "none")
+
 
     $("#adminDailySummary").css("display", "block")
     $("#adminCars").css("display", "none")
@@ -122,7 +122,9 @@ function driverLogin(data) {
 function adminLogin(data) {
 
     $("#loginPage").css("display", "none")
+    $("#homeNavbar").css("display", "none")
     $("#admin").css("display", "block")
+    $("#adminNavBar").css("display", "block")
 
     $("#adminDailySummary").css("display", "block")
     $("#adminCars").css("display", "none")
@@ -132,6 +134,133 @@ function adminLogin(data) {
     $("#adminPayments").css("display", "none")
 
 }
+
+//-------------admin profile nav
+//--Dashboard
+$("#adminDashboardBtn").click(function () {
+
+    $("#adminDailySummary").css("display", "inline-flex")
+
+    $("#adminReservation").css("display", "none")
+    $("#adminCars").css("display", "none")
+    $("#adminDrivers").css("display", "none")
+    $("#adminCustomer").css("display", "none")
+    $("#adminPayments").css("display", "none")
+
+
+})
+
+//--Reservation
+$("#adminReservationBtn").click(function () {
+    $("#adminReservation").css("display", "inline-flex")
+
+    $("#adminDailySummary").css("display", "none")
+    $("#adminCars").css("display", "none")
+    $("#adminDrivers").css("display", "none")
+    $("#adminCustomer").css("display", "none")
+    $("#adminPayments").css("display", "none")
+
+    $("#admin-reservation-title").css("display", "block")
+    $("#admin-todayPickups-title").css("display", "none")
+
+    $("#admin-update-reservation").css("display", "block")
+    $("#admin-view-reservation").css("display", "none")
+
+
+})
+
+//--Cars
+$("#adminCarsBtn").click(function () {
+    $("#adminCars").css("display", "inline-flex")
+
+    $("#adminReservation").css("display", "none")
+    $("#adminDailySummary").css("display", "none")
+    $("#adminDrivers").css("display", "none")
+    $("#adminCustomer").css("display", "none")
+    $("#adminPayments").css("display", "none")
+
+
+
+    $("#availableBtn").css("display", "none");
+    $("#unavailableBtn").css("display", "none");
+    $("#maintainBtn").css("display", "none");
+    $("#underMaintainBtn").css("display", "none");
+    $("#viewButton").css("display", "block");
+
+
+    $("#admin-all-cars-title").css("display", "block")
+    $("#admin-all-unavailableCars-title").css("display", "none");
+    $("#admin-all-needMaintains-title").css("display", "none");
+    $("#admin-all-underMaintains-title").css("display", "none");
+    $("#admin-all-availableCars-title").css("display", "none");
+
+})
+
+//--Customer
+$("#adminCustomerBtn").click(function () {
+    $("#adminCustomer").css("display", "inline-flex")
+
+    $("#adminCars").css("display", "none")
+    $("#adminReservation").css("display", "none")
+    $("#adminDailySummary").css("display", "none")
+    $("#adminDrivers").css("display", "none")
+    $("#adminPayments").css("display", "none")
+
+
+})
+
+//--Drivers
+$("#adminDriversBtn").click(function () {
+    $("#adminDrivers").css("display", "inline-flex")
+
+    $("#adminCustomer").css("display", "none")
+    $("#adminCars").css("display", "none")
+    $("#adminReservation").css("display", "none")
+    $("#adminDailySummary").css("display", "none")
+    $("#adminPayments").css("display", "none")
+
+    $("#admin-driver-schedule-table").css("display", "none")
+    $("#admin-driver-table").css("display", "block")
+
+
+    $("#admin-all-drivers-title").css("display", "block")
+    $("#admin-all-driverSchedule-title").css("display", "none")
+
+    $("#enableSaveDriverBtn").css("display", "block");
+    $("#enableSearchDriverBtn").css("visibility", "hidden");
+
+
+})
+
+//--Payment
+$("#adminPaymentBtn").click(function () {
+    $("#adminPayments").css("display", "inline-flex")
+
+    $("#adminDrivers").css("display", "none")
+    $("#adminCustomer").css("display", "none")
+    $("#adminCars").css("display", "none")
+    $("#adminReservation").css("display", "none")
+    $("#adminDailySummary").css("display", "none")
+
+    $("#admin-all-drivers-title").css("display", "block")
+    $("#admin-all-driverSchedule-title").css("display", "none")
+
+
+    $("#enableSaveDriverBtn").css("display", "block");
+    $("#enableSearchDriverBtn").css("visibility", "hidden");
+
+})
+
+
+
+
+
+
+
+
+
+
+
 
 //----------User Logout
 $("#logOutBtn").click(function () {
@@ -143,11 +272,12 @@ $("#logOutBtn").click(function () {
     $("#driver").css("display", "none")
 
     $("#admin").css("display", "none")
+    $("#adminNavBar").css("display", "none")
 
     $("#homePage").css("display", "block")
     $("#homeNavbar").css("display", "block")
 
-    
+
 })
 
 
