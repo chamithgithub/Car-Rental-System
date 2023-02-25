@@ -881,31 +881,327 @@
 
                     <div class="customer-home-sub-container-one">
 
-                        <div class="customer-home-detail-container justify-content-center bg-danger">
-                            <div class="form-floating w-75 mt-4 ">
+                        <div style="display: flex" class="customer-home-detail-container justify-content-center bg-warning">
+                            <div class="form-floating w-25 mt-3 mb-3 ms-5">
                                 <input type="date" class="form-control border-secondary " id="customer-home-pickup">
                                 <label for="register-form-date">Date</label>
                             </div>
-                            <div class="form-floating w-75 mt-3 ">
+                            <div class="form-floating w-25 mt-3 mb-3 ms-5">
                                 <input type="date" class="form-control border-secondary" id="customer-home-return">
                                 <label for="register-form-date">Date</label>
 
                             </div>
                             <button id="customer-searchCarBtn" type="button"
-                                    class="btn  btn-outline-warning text-light mb-3 mt-3 ">Search Car
+                                    class="btn  btn-outline-danger text-light mb-3 mt-3 ms-5">Search Car
                             </button>
 
                         </div>
                     </div>
-                    <div class="customer-home-sub-container-two">
+                    <div  class="customer-home-sub-container-two "style="background-image: url('assets/img/backgrond.jpg');
+                    background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+
                         <h3 class="fs-1 fw-bold text-dark">Hire Deals</h3>
 
-                        <img class="customer-home-background-image" src="assets/img/20-features-in-car-rental-software-in-2020.jpg" alt=" car">
+                        <img style="width:30vw " class="customer-home-background-image"
+                             src="assets/img/20-features-in-car-rental-software-in-2020.jpg" alt=" car">
                     </div>
                 </div>
-<div>
 
-</div>
+
+                <div class="customer-home-container-two">
+                    <div class="customer-home-div-one">
+                        <p class="fs-1 fw-bold mt-4 text-black">Available Cars</p>
+                    </div>
+                    <div class="customer-home-main-two">
+
+<!--                        <h1 id="homeUnavailableTag" class="text-danger">No Any Available Cars</h1>-->
+
+                        <div style="display: none" id="divOne" class="card custom-card ">
+
+                            <img id="card-one-img" src="assets/img/1.png" class="custom-card-img" alt="...">
+                            <div id="divOneBody" class="card-body ">
+                                <h8 id="card-one-type" >Luxury</h8>
+                                <h3 id="card-one-brand" class="card-title">BMW</h3><br>
+                                <h5 class="custom-card-daily">Daily(LKR)</h5>
+                                <h5 id="card-one-daily" class="custom-card-price"></h5>
+                                <br style="clear:both;">
+                                <h5  class="custom-card-daily">Monthly(LKR)</h5>
+                                <h5 id="card-one-monthly" class="custom-card-price"></h5>
+
+                                <hr style="clear:both;"/>
+                                <h5 id="card-one-fuel-main" class=" float-start ms-2">
+                                    <i class="fa-solid fs-3 me-1 mt-2 text-secondary fa-gas-pump"></i>
+                                    <span id="card-one-fuel">Car </span>
+                                </h5>
+
+                                <h5 id="card-one-transmission-main" class="float-end me-2">
+                                    <i class="fa-solid fs-3 mt-2 me-2 text-secondary fa-car-rear"></i>
+                                    <span id="card-one-transmission"></span>
+                                </h5>
+                                <br style="clear:both;">
+                                <p id="card-one-car-id" style="display: none">Car</p>
+
+                                <a id="card-one-bookBtn" class="btn btn-dark mt-5 d-block w-100 me-auto ms-auto " data-bs-toggle="modal"
+                                   data-bs-target="#bookNowModel">Book Now</a>
+                            </div>
+                        </div>
+                        <div style="display: none" id="divTwo" class="card custom-card  ">
+                            <img id="card-two-img" src="assets/img/1.png" class="custom-card-img" alt="...">
+                            <div  class="card-body ">
+                                <h8 id="card-two-type">Luxury</h8>
+                                <h3 id="card-two-brand" class="card-title">BMW</h3><br>
+                                <h5 class="custom-card-daily">Daily(LKR)</h5>
+                                <h5 id="card-two-daily" class="custom-card-price"></h5>
+                                <br style="clear:both;">
+                                <h5  class="custom-card-daily">Monthly(LKR)</h5>
+                                <h5 id="card-two-monthly" class="custom-card-price"></h5>
+
+                                <hr style="clear:both;"/>
+                                <h5 id="card-two-fuel-main"  class=" float-start ms-2">
+                                    <i class="fa-solid fs-3 me-1 mt-2 text-secondary fa-gas-pump"></i><span id="card-two-fuel"> </span></h5>
+                                <h5 id="card-two-transmission-main" class="float-end me-2">
+                                    <i class="fa-solid fs-3 mt-2 me-2 text-secondary fa-car-rear"></i><span id="card-two-transmission"></span></h5>
+                                <br style="clear:both;">
+                                <p id="card-two-car-id" style="display: none">Car</p>
+                                <a id="card-two-bookBtn" class="btn btn-dark mt-5 d-block w-100 me-auto ms-auto " data-bs-toggle="modal"
+                                   data-bs-target="#bookNowModel">Book Now</a>
+                            </div>
+                        </div>
+                        <div style="display: none" id="divThree" class="card custom-card  ">
+                            <img id="card-three-img" src="assets/img/1.png" class="custom-card-img" alt="...">
+                            <div class="card-body ">
+                                <h8 id="card-three-type">Luxury</h8>
+                                <h3 id="card-three-brand" class="card-title">Mercedes Benz</h3><br>
+                                <h5 class="custom-card-daily">Daily(LKR)</h5>
+                                <h5 id="card-three-daily" class="custom-card-price"></h5>
+                                <br style="clear:both;">
+                                <h5 class="custom-card-daily">Monthly(LKR)</h5>
+                                <h5 id="card-three-monthly" class="custom-card-price"></h5>
+
+                                <hr style="clear:both;"/>
+                                <h5 id="card-three-fuel-main"  class=" float-start ms-2">
+                                    <i class="fa-solid fs-3 me-1 mt-2 text-secondary fa-gas-pump"></i><span id="card-three-fuel"></span></h5>
+                                <h5 id="card-three-transmission-main"  class="float-end me-2">
+                                    <i class="fa-solid fs-3 mt-2 me-2 text-secondary fa-car-rear"></i><span id="card-three-transmission"></span></h5>
+                                <br style="clear:both;">
+                                <p id="card-three-car-id" style="display: none">Car</p>
+                                <a id="card-three-bookBtn" class="btn btn-dark mt-5 d-block w-100 me-auto ms-auto" data-bs-toggle="modal"
+                                   data-bs-target="#bookNowModel">Book Now</a>
+                            </div>
+                        </div>
+
+<!-------------------------------bookNowModel-------------------------------------------->
+                        <div class="modal fade" id="bookNowModel" tabindex="-1" aria-labelledby="bookCarModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog-centered modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-dark text-light">
+                                        <h5 class="modal-title " id="customerBookCarModalLabel">Car Reservation</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+<!----------------------------Slider----------------------->
+<!--     https://getbootstrap.com/docs/4.0/components/carousel/-->
+                                        <div id="carouselExampleControls" class="carousel slide"
+                                             data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img id="customer-reservation-car-img1" src="assets/img/1.png" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img id="customer-reservation-car-img2" src="assets/img/1.png" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img id="customer-reservation-car-img3" src="assets/img/1.png" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img id="customer-reservation-car-img4" src="assets/img/1.png" class="d-block w-100" alt="...">
+                                                </div>
+
+
+                                            </div>
+                                            <button class="carousel-control-prev" type="button"
+                                                    data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button"
+                                                    data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                        <br>
+
+<!----------------------------customerForm----------------------->
+                                        <form id="customerForm">
+                                            <p class="text-center fs-3 fw-bold">Vehicle Details</p>
+                                            <hr style=" height: 2px; border: 1px solid black;">
+
+                                            <div class="d-flex flex-wrap justify-content-around">
+                                                <div style="width: 30%;margin-left: 40px">
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">Register No:</label>
+                                                        <p id="customer-reservation-car-id" class="fs-5"></p>
+                                                    </div>
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">Brand:</label>
+                                                        <p id="customer-reservation-car-brand" class="fs-5"></p>
+                                                    </div>
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">Type:</label>
+                                                        <p id="customer-reservation-car-type" class="fs-5"></p>
+                                                    </div>
+
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">Color:</label>
+                                                        <p id="customer-reservation-car-color"  class="fs-5"></p>
+                                                    </div>
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">Fuel Type:</label>
+                                                        <p id="customer-reservation-car-fuel"  class="fs-5"></p>
+                                                    </div>
+
+                                                </div>
+                                                <div style="width: 30%;">
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">No Of Passengers:</label>
+                                                        <p id="customer-reservation-car-passengers"  class="fs-5"></p>
+                                                    </div>
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">Transmission:</label>
+                                                        <p id="customer-reservation-car-transmission"  class="fs-5"></p>
+                                                    </div>
+
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">Price For Extra Km:</label>
+                                                        <p id="customer-reservation-car-extraKm"  class="fs-5"></p>
+                                                    </div>
+
+
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">Waiver Payment:</label>
+                                                        <p id="customer-reservation-car-waiverPayment"  class="fs-5"></p>
+                                                    </div>
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">Mileage:</label>
+                                                        <p id="customer-reservation-car-mileage"  class="fs-5"></p>
+                                                    </div>
+                                                </div>
+                                                <div style="width: 30%">
+
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">Daily Rate:</label>
+                                                        <p id="customer-reservation-car-daily" class="fs-5"></p>
+                                                    </div>
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">Monthly Rate:</label>
+                                                        <p id="customer-reservation-car-monthly"  class="fs-5"></p>
+                                                    </div>
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">Free km For Day:</label>
+                                                        <p id="customer-reservation-car-freeKmDay"  class="fs-5"></p>
+                                                    </div>
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">Free km For Month:</label>
+                                                        <p id="customer-reservation-car-freeKmMonth"  class="fs-5"></p>
+                                                    </div>
+                                                </div>
+                                                <div style="width: 40%;">
+
+<!-------------------Reservation Details------------------->
+                                                    <p style="margin-left: 75%;width: 80%;margin-top: 5%"
+                                                       class="text-center fs-3 fw-bold">Reservation Details</p>
+                                                    <hr style=" height: 2px; border: 1px solid black;">
+                                                    <br>
+
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">Reserve ID:</label>
+                                                        <input id="customer-reservation-reserve-id"  class="form-control mb-3 " type="text"
+                                                               aria-label="Disabled input example" disabled readonly>
+                                                    </div>
+                                                    <div>
+                                                        <label  class="col-form-label fw-bold">Customer Name:</label>
+                                                        <input id="customer-reservation-customer-name"  class="form-control mb-3" type="text"
+                                                               aria-label="Disabled input example" disabled readonly>
+
+                                                    </div>
+                                                    <div>
+                                                        <label  class="col-form-label fw-bold">Vehicle No:</label>
+                                                        <input id="customer-reservation-customer-vehicle-no" class="form-control mb-3" type="text"
+                                                               aria-label="Disabled input example" disabled readonly>
+                                                    </div>
+                                                    <div>
+                                                        <label for="register-form-date"
+                                                               class=" col-form-label fw-bold ">PickUp Date</label>
+                                                        <input id="customer-reservation-customer-pickUpDate" type="date" class="form-control mb-3"disabled>
+                                                    </div>
+                                                    <div>
+                                                        <label for="register-form-date" class=" col-form-label fw-bold">Return Date</label>
+                                                        <input id="customer-reservation-customer-returnDate" type="date" class="form-control  mb-3" disabled>
+                                                    </div>
+
+                                                    <br>
+
+                                                </div>
+                                                <div style="width: 40%;">
+<!-------------------Customer Details------------------->
+                                                    <br>
+                                                    <hr style=" height: 2px; border: 1px solid black;margin-top: 16%">
+                                                    <br>
+
+                                                    <div>
+                                                        <label class="col-form-label fw-bold ">No Of Days:</label>
+                                                        <input id="customer-reservation-customer-days" class="form-control mb-4" type="number"
+                                                               aria-label="Disabled input example" disabled readonly>
+                                                    </div>
+                                                    <div>
+                                                        <label for="register-form-date"
+                                                               class=" col-form-label fw-bold ">PickUp Time</label>
+                                                        <input id="customer-reservation-customer-pickUpTime"  value="00:00:00" type="time" step="1"class="form-control  mb-3">
+                                                    </div>
+                                                    <div>
+                                                        <label class="col-form-label fw-bold">PickUp Venue:</label>
+                                                        <input id="customer-reservation-customer-venue" class="form-control mb-3" type="text"
+                                                               aria-label="Disabled input example" >
+                                                    </div>
+                                                    <div>
+                                                        <label class="form-label fw-bold">Band Slip Image</label>
+                                                        <input class="form-control mb-5 " type="file"
+                                                               id="slip-image">
+                                                    </div>
+                                                    <div class="form-check ms-2">
+                                                        <input id="customer-reservation-customer-driverCheck" class="form-check-input fs-5 mt-1" type="checkbox">
+                                                        <label class="form-check-label fs-6 fw-bold mt-1">
+                                                            Driver Status
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer justify-content-center">
+                                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close
+                                        </button>
+                                        <button type="button" id="btnReservationSave" class="btn btn-dark">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="customer-home-div-two">
+                        <button id="customer-home-previousCarBtn" type="button" class="btn btn-danger me-1">
+                            <i class="fa-solid fs-2 fa-circle-arrow-left"></i>
+                        </button>
+                        <button id="customer-home-nextCarBtn" type="button" class="btn btn-danger ms-1">
+                            <i class="fa-solid fs-2 fa-circle-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </div>
 
             </div>
 
@@ -913,145 +1209,13 @@
 
         <section style="display: none" id="customerReservation">
 
-            <div class="customer-res-container">
-                <div class="customer-res-sub__container">
-                    <div>
-                        <button id="customer-upcoming-reservationBtn" class="btn btn-outline-dark fs-5 me-2"> Upcoming Reservation</button>
-                        <button id="customer-pending-reservationBtn" class="btn btn-outline-dark fs-5 ms-2"> Pending Reservation</button>
-                        <button style="display:none;margin-left: 20px" class="btn btn-outline-dark fs-5"> Previous
-                            Reservation
-                        </button>
 
-                    </div>
-                    <div class="customer-res-detail__container">
-                        <div class="card text-bg-light border-radius-shadow w-50" style="height: 80%;">
-                            <div class="card-header border-2 fw-bold">Reservation Status
-                                <span  id="customer-reservationStatus" class=" ms-3 fw-bold ">No Reservation</span></div>
-                            <div class="card-body text-center">
-                                <h5  class="card-title text-center fw-bolder">Reservation ID : <span id="customer-reservation-id"> </span></h5>
-                                <br>
-                                <p class="card-title fs-5 fw-bold">Name : <span id="customer-reservation-name"></span></p>
-                                <p class="card-title fs-5 fw-bold">Vehicle No : <span id="customer-reservation-vehicle"></span></p>
-                                <p class="card-title fs-5 fw-bold">Pickup venue : <span id="customer-reservation-venue"></span></p>
-                                <p class="card-title fs-5 fw-bold">pickup Time : <span id="customer-reservation-pickUp-time"></span></p>
-                                <p class="card-title fs-5 fw-bold">Pickup Date : <span id="customer-reservation-pickUp-date"></span></p>
-                                <p class="card-title fs-5 fw-bold">Return Date : <span id="customer-reservation-return-date"></span></p>
-                                <p class="card-title fs-5 fw-bold">No Of Days : <span id="customer-reservation-days"></span></p>
-
-                            </div>
-                        </div>
-                        <div class="card text-bg-light border-radius-shadow w-25" style="margin-right: 5%;height: 80%">
-                            <div class="card-header fw-bold">Driver Status <span id="driverStatus" class="ms-3 fw-bold">Not Required</span></div>
-                            <div class="card-body text-center">
-                                <h5 class="card-title text-center fw-bolder">Driver ID : <span id="customer-reservation-driver-id"> </span></h5>
-                                <br>
-                                <p class="card-title fs-5 fw-bold">Name : <span id="customer-reservation-driver-name">   </span></p>
-                                <p class="card-title fs-5 fw-bold">License No : <span id="customer-reservation-driver-license"> </span></p>
-                                <p class="card-title fs-5 fw-bold">Join Date : <span id="customer-reservation-driver-joinDate"> </span></p>
-                                <p class="card-title fs-5 fw-bold">Mobile : <span id="customer-reservation-driver-mobile"> </span></p>
-
-
-                            </div>
-                        </div>
-                        <div style="height: 80%;width: 15%" class="border-radius-shadow">
-
-                            <table class="table table-hover table-borderless  ">
-                                <thead style="background-color: #f2f2f2;border-bottom: 1px solid #e9e9e9" class="text-center">
-                                <tr >
-                                    <th class="text-center" scope="col">Reservations</th>
-                                </tr>
-                                </thead>
-                                <tbody id="customer-upcoming-reservation-table">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-light me-1">
-                            <i class="fa-solid fs-2 fa-circle-arrow-left"></i>
-                        </button>
-                        <button type="button" class="btn btn-light ms-1">
-                            <i class="fa-solid fs-2 fa-circle-arrow-right"></i>
-                        </button>
-                    </div>
-
-                </div>
-            </div>
 
 
         </section>
 
         <section style="display: none" id="customerProfile">
-            <div class="customer-pro-container">
-                <p class="fs-2 fw-bold text-black border-5 border-dark">Update Profile</p>
-                <div class="customer-pro-sub-container border-radius-shadow">
-                    <div class="customer-pro-detail-container-one">
-                        <button id="customerInformationBtn" type="button"
-                                class="btn btn-outline-dark w-75 fw-bold register-form-btn mt-5">
-                            Information
-                        </button>
-                        <button id="customerChangePasswordBtn" type="button"
-                                class="btn btn-outline-dark w-75 fw-bold register-form-btn">Password
-                        </button>
 
-                    </div>
-
-                    <div class="customer-pro-detail-container-two">
-                        <div id="customerProfileUpdateDetail" style="display: block" class="customer-pro-box">
-                            <div class="customer-pro-box-row-one">
-                                <div class="customer-pro-detail-container">
-                                    <div class="form-floating w-100">
-                                        <input style="border: 1px solid gray" type="text" class="form-control " id="customer-profile-nic" disabled readonly>
-                                        <label for="customer-profile-nic">NIC No</label>
-                                    </div>
-                                    <div class="form-floating w-100">
-                                        <input style="height: 10%;border: 1px solid gray" type="text" class="form-control "
-                                               id="customer-profile-name" >
-                                        <label for="customer-profile-name">Full Name</label>
-                                    </div>
-
-                                    <div class="form-floating w-100">
-                                        <input style="border: 1px solid gray" type="email" class="form-control " id="customer-profile-email">
-                                        <label for="customer-profile-email">Email </label>
-                                    </div>
-                                    <div class="form-floating w-100">
-                                        <input style="border: 1px solid gray" type="number" class="form-control " id="customer-profile-mobile">
-                                        <label for="customer-profile-mobile">Mobile</label>
-                                    </div>
-                                </div>
-                                <div class="customer-pro-detail-container mt-2 ">
-                                    <div class="form-floating w-100 ">
-                                        <input style="border: 1px solid gray" type="text" class="form-control" id="customer-profile-address">
-                                        <label for="customer-profile-address">Address</label>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="customer-pro-box-row-two">
-                                <button id="customer-updateBtn" type="button" class="btn btn-dark register-form-btn mt-5 w-25">Save</button>
-
-                            </div>
-                        </div><!--Display block Information of customer-->
-
-                        <div id="customerProfileChangePassword" style="display:none;margin-right:200px ">
-                            <h2 class="text-black mb-5">Change Password</h2>
-                            <div style="width: 450px; margin-bottom: 20px;" class="form-floating ">
-                                <input type="password" class="form-control border-secondary"
-                                       id="customer-profile-current-password">
-                                <label for="customer-profile-current-password">Current Password</label>
-                            </div>
-                            <div class="form-floating w-100">
-                                <input type="password" class="form-control border-secondary"
-                                       id="customer-profile-new-password">
-                                <label for="customer-profile-new-password">New Password</label>
-                            </div>
-                            <button id="btnChangePassword" type="button" class="btn btn-dark register-form-btn mt-5 w-20">Change</button>
-
-                        </div><!--Display block change Password of customer-->
-                    </div>
-                </div>
-            </div>
 
         </section>
     </section>
