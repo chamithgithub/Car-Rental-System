@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class AppWideExceptionHandler {
 
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    @ExceptionHandler({RuntimeException.class})
-    public ResponseUtil handleException(RuntimeException e){
-        return new ResponseUtil(500,e.getMessage(),null);
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @org.springframework.web.bind.annotation.ExceptionHandler({Exception.class})
+    public ResponseUtil exceptionHandler(Exception e) {
+        return new ResponseUtil(500, e.getMessage(), null);
     }
 }
 

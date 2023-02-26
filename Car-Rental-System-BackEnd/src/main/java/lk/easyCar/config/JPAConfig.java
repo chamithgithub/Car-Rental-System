@@ -56,6 +56,7 @@ public class JPAConfig {
         return va;
     }
 
+
     @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
         return new JpaTransactionManager(emf);
