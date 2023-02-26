@@ -1,7 +1,10 @@
 package lk.easyCar.config;
 
+import lk.easyCar.util.PasswordEncryptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -22,11 +25,10 @@ import javax.sql.DataSource;
 
 public class JPAConfig {
 
-
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter jpa){
         LocalContainerEntityManagerFactoryBean bean= new LocalContainerEntityManagerFactoryBean();
-        bean.setPackagesToScan("lk.ijse.spring.entity");
+        bean.setPackagesToScan("lk.easyCar.entity");
         bean.setDataSource(ds);
         bean.setJpaVendorAdapter(jpa);
         return bean;
@@ -38,7 +40,7 @@ public class JPAConfig {
         //if we are in (Production) we can use a DBCP pool
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("com.mysql.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://localhost:3306/spring_DB?createDatabaseIfNotExist=true");
+        ds.setUrl("jdbc:mysql://localhost:3306/springCarDB?createDatabaseIfNotExist=true");
         ds.setUsername("root");
         ds.setPassword("root");
         return ds;
@@ -60,7 +62,7 @@ public class JPAConfig {
     }
 
     @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+    public PasswordEncryptor passwordEncryptor() {
+        return new PasswordEncryptor();
     }
 }
