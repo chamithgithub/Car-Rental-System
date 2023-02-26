@@ -12,7 +12,6 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -25,14 +24,26 @@ import javax.sql.DataSource;
 
 public class JPAConfig {
 
+    @Autowired
+    Environment environment;
+
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter jpa){
-        LocalContainerEntityManagerFactoryBean bean= new LocalContainerEntityManagerFactoryBean();
-        bean.setPackagesToScan("lk.easyCar.entity");
-        bean.setDataSource(ds);
-        bean.setJpaVendorAdapter(jpa);
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource, JpaVendorAdapter adapter) {
+        LocalContainerEntityManagerFactoryBean bean = new LocalContainerEntityManagerFactoryBean();
+        bean.setJpaVendorAdapter(adapter);
+        bean.setDataSource(dataSource);
+        bean.setPackagesToScan(environment.getRequiredProperty("entity.package.name"));
         return bean;
     }
+
+//    @Bean
+//    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter jpa){
+//        LocalContainerEntityManagerFactoryBean bean= new LocalContainerEntityManagerFactoryBean();
+//        bean.setPackagesToScan("lk.easyCar.entity");
+//        bean.setDataSource(ds);
+//        bean.setJpaVendorAdapter(jpa);
+//        return bean;
+//    }
 
     @Bean
     public DataSource dataSource(){
@@ -47,14 +58,24 @@ public class JPAConfig {
     }
 
     @Bean
-    public JpaVendorAdapter jpaVendorAdapter(){
-        HibernateJpaVendorAdapter va=new HibernateJpaVendorAdapter();
-        va.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect");
-        va.setDatabase(Database.MYSQL);
-        va.setGenerateDdl(true);
-        va.setShowSql(true);
-        return va;
+    public JpaVendorAdapter jpaVendorAdapter() {
+        HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
+        adapter.setDatabasePlatform(environment.getRequiredProperty("my.app.dialect"));
+        adapter.setDatabase(Database.MYSQL);
+        adapter.setShowSql(true);
+        adapter.setGenerateDdl(true);
+        return adapter;
     }
+
+//    @Bean
+//    public JpaVendorAdapter jpaVendorAdapter(){
+//        HibernateJpaVendorAdapter va=new HibernateJpaVendorAdapter();
+//        va.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect");
+//        va.setDatabase(Database.MYSQL);
+//        va.setGenerateDdl(true);
+//        va.setShowSql(true);
+//        return va;
+//    }
 
 
     @Bean
