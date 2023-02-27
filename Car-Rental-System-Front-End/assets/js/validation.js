@@ -66,3 +66,32 @@ function registerFormValidation() {
         $("#register-form-name").css('border', '2px solid red');
     }
 }
+
+function customerUpdateValidation() {
+    let name = $("#customer-profile-name").val();
+    let email = $("#customer-profile-email").val();
+    let mobile = $("#customer-profile-mobile").val();
+    let address = $("#customer-profile-address").val();
+
+    if (regExCusName.test(name)) {
+        $("#customer-profile-name").css('border', '2px solid blue');
+        if (regExCusEmail.test(email)) {
+            $("#customer-profile-email").css('border', '2px solid blue');
+            if (regExCusMobile.test(mobile)) {
+                $("#customer-profile-mobile").css('border', '2px solid blue');
+                if (regExCusAddress.test(address)) {
+                    $("#customer-profile-address").css('border', '2px solid blue');
+                    updateCustomer();
+                } else {
+                    $("#customer-profile-address").css('border', '2px solid red');
+                }
+            } else {
+                $("#customer-profile-mobile").css('border', '2px solid red');
+            }
+        } else {
+            $("#customer-profile-email").css('border', '2px solid red');
+        }
+    } else {
+        $("#customer-profile-name").css('border', '2px solid red');
+    }
+}

@@ -96,6 +96,122 @@ function loadAllCustomer() {
         }
     });
 }
+function setDataToViewCustomerModal(data) {
+    $("#admin-view-customer-nic").val(data.nic)
+    $("#admin-view-customer-address").val(data.address)
+    $("#admin-view-customer-email").val(data.email)
+    $("#admin-view-customer-mobile").val(data.mobile)
+    $("#admin-view-customer-name").val(data.customer_name)
+    $("#admin-view-customer-registerDate").val(data.register_date)
+    $("#admin-view-customer-imgOne").attr("src", baseUrl + data.nic_img)
+    $("#admin-view-customer-imgTwo").attr("src", baseUrl + data.license_img)
+}
+
+$("#admin-customer-viewBtn").click(function () {
+    if (customer_nic == null) {
+        return
+    }
+    $.ajax({
+        url: baseUrl + "controller/customer/customerDetail/" + customer_nic,
+        method: "GET",
+        success: function (resp) {
+            if (resp.status === 200) {
+                setDataToViewCustomerModal(resp.data);
+            }
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+})
+
+$("#btnChangePassword").click(function () {
+
+    var newPassword = $("#customer-profile-new-password").val()
+
+    let userDTO = {
+        user_name: customer.user_name,
+        password: $("#customer-profile-current-password").val(),
+    }
+
+    $.ajax({
+        url: baseUrl + "controller/login",
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(userDTO),
+        success: function (res) {
+            if (res.status === 200) {
+                if (res.message === ("Customer")) {
+                    changePassword(customer.nic, customer.user_name, newPassword);
+                } else {
+                    alert("Current Password Didnt match")
+                }
+            }
+        },
+        error: function (ob) {
+            console.log(ob.responseJSON.message);
+        }
+    });
+})
+
+function changePassword(nic, user_name, newPassword) {
+    user = {
+        customer_id: nic,
+        user_name: user_name,
+        password: newPassword
+    }
+
+    $.ajax({
+        url: baseUrl + "controller/customer/accountSecurity",
+        method: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify(user),
+        success: function (res) {
+            if (res.status === 200) {
+                alert(res.message)
+            } else {
+                alert("Cant update your password in this moment")
+            }
+        },
+        error: function (ob) {
+            console.log(ob.responseJSON.message);
+        }
+    });
+}
+$("#customer-updateBtn").click(function () {
+    customerUpdateValidation()
+})
+function updateCustomer() {
+    var newDetails = {
+        nic: $("#customer-profile-nic").val(),
+        user_name: customer.user_name,
+        password: customer.password,
+        customer_name: $("#customer-profile-name").val(),
+        license_img: customer.license_img,
+        nic_img: customer.nic_img,
+        address: $("#customer-profile-address").val(),
+        mobile: $("#customer-profile-mobile").val(),
+        email: $("#customer-profile-email").val(),
+        register_date: customer.register_date
+    }
+
+    $.ajax({
+        url: baseUrl + "controller/customer/update",
+        method: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify(newDetails),
+        success: function (res) {
+            if (res.status === 200) {
+                alert(res.message)
+            } else {
+                alert("Cant update your Details in this moment")
+            }
+        },
+        error: function (ob) {
+            console.log(ob.responseJSON.message);
+        }
+    });
+}
 
 $('#register-form-date').val(today);
 $('#customer-home-pickup').val(today);

@@ -53,14 +53,14 @@ $("#loginUserBtn").click(function () {
 
 //-------------register page
 $(".getStartBtn").click(function () {
-    $("#homePage").css('display', 'none')
-    $("#homeNavbar").css('display', 'none')
-    $("#loginPage").css('display', 'none')
+    // $("#homePage").css('display', 'none')
+    // $("#homeNavbar").css('display', 'none')
+    // $("#loginPage").css('display', 'none')
+    //
+    // $("#registerForm").css('display', 'block')
 
-    $("#registerForm").css('display', 'block')
-
-    // trail
-
+    // trail  customer
+    //
     //  $("#homePage").css('display', 'none')
     //  $("#homeNavbar").css('display', 'none')
     //
@@ -72,6 +72,20 @@ $(".getStartBtn").click(function () {
     // $("#customerNavbar").css("display", "block")
 
 
+
+    // trail admin
+
+    $("#admin").css("display", "block")
+    $("#adminNavBar").css("display", "block")
+    $("#homePage").css("display", "none")
+    $("#homeNavbar").css("display", "none")
+
+    $("#adminDailySummary").css("display", "block")
+    $("#adminCars").css("display", "none")
+    $("#adminReservation").css("display", "none")
+    $("#adminDrivers").css("display", "none")
+    $("#adminCustomer").css("display", "none")
+    $("#adminPayments").css("display", "none")
 
 
 })
@@ -323,6 +337,8 @@ $("#logOutBtn").click(function () {
 
 
 })
+
+
 
 
 
