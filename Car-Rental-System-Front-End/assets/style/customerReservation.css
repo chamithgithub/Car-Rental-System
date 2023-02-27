@@ -1,0 +1,41 @@
+#customerReservation{
+    background: url("../img/backgrond.jpg");
+}
+.customer-res-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 900px;
+}
+.customer-res-sub__container {
+    display: flex;
+    flex-direction:column;
+    justify-content: start;
+    align-items: center;
+    width: 85%;
+    height: 700px;
+
+}
+.customer-res-detail__container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height:70%;
+    color: #005ebc;
+    width: 90%;
+    margin-top:50px;
+    border-radius:10px;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ebc1c1;
+    background-clip: border-box;
+    border: 1px solid rgb(15 172 103);
+    border-radius: 0.25rem;
+}
+

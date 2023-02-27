@@ -1,0 +1,74 @@
+.customer-pro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    background: url("../img/backgrond.jpg");
+
+}
+
+.customer-pro-sub-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 75%;
+    height: 500px;
+}
+
+.customer-pro-detail-container-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    border-right: 1px solid #bcbcbc;
+}
+
+.customer-pro-detail-container-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 80%;
+}
+
+.customer-pro-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1%;
+    width: 95%;
+    height: 95%;
+
+}
+
+.customer-pro-box-row-one {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    height: 90%;
+    width: 100%;
+}
+
+.customer-pro-box-row-two {
+    display: flex;
+    height: 10%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.customer-pro-detail-container {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    margin: 1%;
+    padding: 2%;
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
