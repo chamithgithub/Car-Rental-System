@@ -150,15 +150,12 @@
             <div class="container-two">
 
                 <div class="detail-box-one">
-                    <img class="mt-5 h-90 w-180" src="assets/img/Capture.PNG" alt="ion"/>
+                    <img class="footerImg1 mt-5 h-90 w-180" src="assets/img/Capture.PNG" alt="ion"/>
 
 
-                    <p class="fs-2 fw-bold mt-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fast & Easy Booking....&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p class="delitsTxt  fw-bold mt-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fast & Easy Booking....&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         5 Years Customers Trust .....&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Well Maintained Vehicles ....
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accomplished drivers ...</p>
-<!--                    <p class="fs-2 fw-bold">Fast & Easy Booking</p>-->
-<!--                    <p class="fs-2 fw-bold">5 Years Customers Trust</p>-->
-<!--                    <p class="fs-2 fw-bold">Well Maintained Vehicles</p>-->
 
                 </div>
 
@@ -881,42 +878,46 @@
 
                     <div class="customer-home-sub-container-one">
 
-                        <div style="display: flex" class="customer-home-detail-container justify-content-center bg-warning">
-                            <div class="form-floating w-25 mt-3 mb-3 ms-5">
+                        <div class="customer-home-detail-container justify-content-center ">
+
+                            <h4 style=" color: #575555">To rent a car, a person typically needs to be at least
+                                21 years old and have a valid driver's license. </h4>
+                            <div class="form-floating w-75 mt-3 mb-3 ms-5">
                                 <input type="date" class="form-control border-secondary " id="customer-home-pickup">
                                 <label for="register-form-date">Date</label>
                             </div>
-                            <div class="form-floating w-25 mt-3 mb-3 ms-5">
+                            <div class="form-floating w-75 mt-3 mb-3 ms-5">
                                 <input type="date" class="form-control border-secondary" id="customer-home-return">
                                 <label for="register-form-date">Date</label>
 
                             </div>
                             <button id="customer-searchCarBtn" type="button"
-                                    class="btn  btn-outline-danger text-light mb-3 mt-3 ms-5">Search Car
+                                    class="btn  btn-outline-danger text-light mb-3 mt-3 ">Search Car
                             </button>
 
                         </div>
                     </div>
-                    <div  class="customer-home-sub-container-two "style="background-image: url('assets/img/backgrond.jpg');
+                    <div  class="customer-home-sub-container-two "style=" height: 92%; background-image: url('assets/img/backgrond.jpg');
                     background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
 
-                        <h3 class="fs-1 fw-bold text-dark">Hire Deals</h3>
+                        <h3 class="fs-1 fw-bold text-dark">Hire Cars</h3>
+                        <h4 style=" color: #575555">Car rental company offer a range of vehicles to choose from, including
+                            small cars, large cars, SUVs, luxury cars, and vans. <br/>that
+                            rents automobiles for short periods of time,generally <br/> raging from a few hours to a few
+                            weeks</h4>
+
 
                         <img style="width:30vw " class="customer-home-background-image"
                              src="assets/img/20-features-in-car-rental-software-in-2020.jpg" alt=" car">
                     </div>
                 </div>
-
-
                 <div class="customer-home-container-two">
                     <div class="customer-home-div-one">
                         <p class="fs-1 fw-bold mt-4 text-black">Available Cars</p>
                     </div>
                     <div class="customer-home-main-two">
-
-<!--                        <h1 id="homeUnavailableTag" class="text-danger">No Any Available Cars</h1>-->
-
+                        <h1 id="homeUnavailableTag" class="text-warning">No Available Cars</h1>
                         <div style="display: none" id="divOne" class="card custom-card ">
 
                             <img id="card-one-img" src="assets/img/1.png" class="custom-card-img" alt="...">
@@ -1209,12 +1210,145 @@
 
         <section style="display: none" id="customerReservation">
 
+            <div class="customer-res-sub__container">
+                <div>
+                    <button id="customer-upcoming-reservationBtn" class="btn btn-outline-info fs-5 mt-5 me-2"> Upcoming Reservation</button>
+                    <button id="customer-pending-reservationBtn" class="btn btn-outline-info fs-5 mt-5 ms-2"> Pending Reservation</button>
+                    <button style="display:none;margin-left: 20px" class="btn btn-outline-dark fs-5"> Previous
+                        Reservation
+                    </button>
+
+                </div>
+                <div class="customer-res-detail__container">
+                    <div class="card text-bg-light border-radius-shadow w-50" style="height: 80%;">
+                        <div class="card-header  border-2 fw-bold">Reservation Status
+                            <span  id="customer-reservationStatus" class=" ms-3 fw-bold ">No Reservation</span></div>
+                        <div class="card-body text-center">
+                            <h5  class="card-title text-center fw-bolder">Reservation ID : <span id="customer-reservation-id"> </span></h5>
+                            <br>
+                            <p class="card-title fs-5 fw-bold">Name : <span id="customer-reservation-name"></span></p>
+                            <p class="card-title fs-5 fw-bold">Vehicle No : <span id="customer-reservation-vehicle"></span></p>
+                            <p class="card-title fs-5 fw-bold">Pickup venue : <span id="customer-reservation-venue"></span></p>
+                            <p class="card-title fs-5 fw-bold">pickup Time : <span id="customer-reservation-pickUp-time"></span></p>
+                            <p class="card-title fs-5 fw-bold">Pickup Date : <span id="customer-reservation-pickUp-date"></span></p>
+                            <p class="card-title fs-5 fw-bold">Return Date : <span id="customer-reservation-return-date"></span></p>
+                            <p class="card-title fs-5 fw-bold">No Of Days : <span id="customer-reservation-days"></span></p>
+
+                        </div>
+                    </div>
+                    <div class="card text-bg-light border-radius-shadow w-25" style="margin-right: 5%;height: 80%">
+                        <div class="card-header fw-bold">Driver Status <span id="driverStatus" class="ms-3 fw-bold">Not Required</span></div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-center fw-bolder">Driver ID : <span id="customer-reservation-driver-id"> </span></h5>
+                            <br>
+                            <p class="card-title fs-5 fw-bold">Name : <span id="customer-reservation-driver-name">   </span></p>
+                            <p class="card-title fs-5 fw-bold">License No : <span id="customer-reservation-driver-license"> </span></p>
+                            <p class="card-title fs-5 fw-bold">Join Date : <span id="customer-reservation-driver-joinDate"> </span></p>
+                            <p class="card-title fs-5 fw-bold">Mobile : <span id="customer-reservation-driver-mobile"> </span></p>
+
+
+                        </div>
+                    </div>
+                    <div style="height: 80%;width: 15%" class="border-radius-shadow">
+
+                        <table class="table table-hover table-borderless  ">
+                            <thead style="background-color: #f2f2f2;border-bottom: 1px solid #e9e9e9" class="text-center">
+                            <tr >
+                                <th class="text-center" scope="col">Reservations</th>
+                            </tr>
+                            </thead>
+                            <tbody id="customer-upcoming-reservation-table">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-danger me-1">
+                        <i class="fa-solid fs-2 fa-circle-arrow-left"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger ms-1">
+                        <i class="fa-solid fs-2 fa-circle-arrow-right"></i>
+                    </button>
+                </div>
+
+            </div>
 
 
 
         </section>
 
         <section style="display: none" id="customerProfile">
+
+            <div class="customer-pro-container ">
+                <p class="fs-2 fw-bold text-black border-5 border-dark">Edit Profile Information</p>
+                <div class="customer-pro-sub-container border-radius-shadow">
+                    <div class="customer-pro-detail-container-one bg-success">
+                        <button id="customerInformationBtn" type="button"
+                                class="btn btn-outline-dark w-75 fw-bold register-form-btn mt-5">
+                            Information
+                        </button>
+                        <button id="customerChangePasswordBtn" type="button"
+                                class="btn btn-outline-dark w-75 fw-bold register-form-btn">Password
+                        </button>
+
+                    </div>
+
+                    <div class="customer-pro-detail-container-two bg-danger">
+                        <div id="customerProfileUpdateDetail" style="display: block" class="customer-pro-box">
+                            <div class="customer-pro-box-row-one">
+                                <div class="customer-pro-detail-container">
+                                    <div class="form-floating w-100">
+                                        <input style="border: 1px solid gray" type="text" class="form-control " id="customer-profile-nic" disabled readonly>
+                                        <label for="customer-profile-nic">NIC No</label>
+                                    </div>
+                                    <div class="form-floating w-100">
+                                        <input style="height: 10%;border: 1px solid gray" type="text" class="form-control "
+                                               id="customer-profile-name" >
+                                        <label for="customer-profile-name">Full Name</label>
+                                    </div>
+
+                                    <div class="form-floating w-100">
+                                        <input style="border: 1px solid gray" type="email" class="form-control " id="customer-profile-email">
+                                        <label for="customer-profile-email">Email </label>
+                                    </div>
+                                    <div class="form-floating w-100">
+                                        <input style="border: 1px solid gray" type="number" class="form-control " id="customer-profile-mobile">
+                                        <label for="customer-profile-mobile">Mobile</label>
+                                    </div>
+                                </div>
+                                <div class="customer-pro-detail-container mt-2 ">
+                                    <div class="form-floating w-100 ">
+                                        <input style="border: 1px solid gray" type="text" class="form-control" id="customer-profile-address">
+                                        <label for="customer-profile-address">Address</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="customer-pro-box-row-two">
+                                <button id="customer-updateBtn" type="button" class="btn btn-outline-warning register-form-btn mb-5 mt-5 w-25">Save</button>
+
+                            </div>
+                        </div>
+
+                        <div id="customerProfileChangePassword" style="display:none;margin-right:200px ">
+                            <h2 class="text-black mb-5">Change Password</h2>
+                            <div style="width: 450px; margin-bottom: 20px;" class="form-floating ">
+                                <input type="password" class="form-control border-secondary"
+                                       id="customer-profile-current-password">
+                                <label for="customer-profile-current-password">Current Password</label>
+                            </div>
+                            <div class="form-floating w-100">
+                                <input type="password" class="form-control border-secondary"
+                                       id="customer-profile-new-password">
+                                <label for="customer-profile-new-password">New Password</label>
+                            </div>
+                            <button id="btnChangePassword" type="button" class="btn btn-outline-warning register-form-btn mt-5 w-20">Change</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
         </section>
