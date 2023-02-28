@@ -5,7 +5,6 @@ import lk.easyCar.entity.Driver;
 import lk.easyCar.repo.DriverRepo;
 import lk.easyCar.service.DriverService;
 import lk.easyCar.util.PasswordEncryptor;
-
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
