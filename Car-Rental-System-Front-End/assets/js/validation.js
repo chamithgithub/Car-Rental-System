@@ -1,15 +1,20 @@
+
+// customer
+
 var regExCusName = /^[A-z.\s]{3,50}$/;
 var regExCusAddress = /^[A-z\s+]{5,50}$/;
 var regExCusNic = /^[0-9]{12}\b|[0-9]{10}[V]$/;
 var regExCusMobile = /^(07)([125678])(-?)[0-9]{7}$/;
 var regExCusEmail = /^[a-z0-9]{4,20}[@][a-z]{3,6}(.com|.lk)$/;
 
+// driver
 var regExDriverName = /^[A-z.\s]{3,50}$/;
 var regExDriverAddress = /^[A-z\s+]{5,50}$/;
 var regExDriverNic = /^[0-9]{12}\b|[0-9]{10}[V]$/;
 var regExDriverMobile = /^(07)([125678])(-?)[0-9]{7}$/;
 var regExLicense = /^[B][0-9]{7}$/
 
+// vehicle
 var regExVehicleNo = /^[A-Z]{3}[-][0-9]{4}\b|[0-9]{3}[-][0-9]{4}$/
 var regExBrand = /^[A-z.\s]{3,10}$/
 var regExType = /^[A-z.\s]{3,10}$/
@@ -26,6 +31,7 @@ var regExExtraKmPrice = /^[0-9]{1,6}$/
 var regExWaiverPayment = /^[0-9]{1,6}$/
 var regExStatus = /^[A-z.\s]{3,15}$/
 var regExVenue = /^[A-z\s+]{5,50}$/
+
 
 
 function registerFormValidation() {
@@ -358,10 +364,14 @@ function updateCarValidation() {
     let waiverPayment = $("#admin-update-waiverPayment").val();
     let status = $("#admin-update-status").val();
 
+    // img
+
+
     let frontView = $("#admin-update-front")[0].files.length;
     let backView = $("#admin-update-back")[0].files.length;
     let sideView = $("#admin-update-side")[0].files.length;
     let interior = $("#admin-update-interior")[0].files.length;
+
 
 
     if (regExVehicleNo.test(registration_no)) {
@@ -463,6 +473,7 @@ function updateCarValidation() {
     }
 }
 
+
 function reservationValidation() {
     let venue = $("#customer-reservation-customer-venue").val();
 
@@ -478,6 +489,7 @@ function reservationValidation() {
         $("#customer-reservation-customer-venue").css('border', '2px solid red');
     }
 }
+
 
 function totalCalculateValidation() {
     var regExDamage = /^[0-9][0-9]*([.][0-9]{2})?$/
@@ -497,5 +509,4 @@ function totalCalculateValidation() {
     } else {
         $("#admin-payment-totalKm").css('border', '2px solid red');
     }
-
 }
