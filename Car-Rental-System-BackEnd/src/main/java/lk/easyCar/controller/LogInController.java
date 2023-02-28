@@ -1,6 +1,5 @@
 package lk.easyCar.controller;
 
-
 import lk.easyCar.dto.AdminDTO;
 import lk.easyCar.dto.CustomerDTO;
 import lk.easyCar.dto.DriverDTO;
@@ -12,13 +11,14 @@ import lk.easyCar.util.PasswordEncryptor;
 import lk.easyCar.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/login")
+@RequestMapping("controller/login")
 public class LogInController {
+
+
 
     @Autowired
     CustomerService customerService;
@@ -32,10 +32,10 @@ public class LogInController {
     @Autowired
     PasswordEncryptor passwordEncryptor;
 
+//    check login
     @PostMapping (produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil checkUserNameAndPassword(@RequestBody UserDTO userDTO) {
 
-        //convert string variable to encrypted hex value
         String encryptedPassword = passwordEncryptor.doHashing(userDTO.getPassword());
 
         CustomerDTO customerDTO = customerService.checkCustomerLogIn(userDTO.getUser_name(), encryptedPassword);
@@ -46,7 +46,7 @@ public class LogInController {
                 if (!(driverDTO ==null)) {
                     return new ResponseUtil(200, "Driver", driverDTO);
                 }else {
-                    return new ResponseUtil(200, "Incorrect username and password", null);
+                    return new ResponseUtil(200, "Incorrect User Name and Password", null);
                 }
             } else {
                 return new ResponseUtil(200, "Admin", adminDTO);
@@ -55,6 +55,5 @@ public class LogInController {
             return new ResponseUtil(200, "Customer", customerDTO);
         }
     }
-
 
 }
