@@ -22,7 +22,7 @@
 }
 .my-custom-scrollbar {
     position: relative;
-    height: 90%;
+    height: 85%;
     overflow: auto;
 }
 .get-center{

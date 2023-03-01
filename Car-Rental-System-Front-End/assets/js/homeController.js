@@ -53,11 +53,11 @@ $("#loginUserBtn").click(function () {
 
 //-------------register page
 $(".getStartBtn").click(function () {
-    // $("#homePage").css('display', 'none')
-    // $("#homeNavbar").css('display', 'none')
-    // $("#loginPage").css('display', 'none')
-    //
-    // $("#registerForm").css('display', 'block')
+    $("#homePage").css('display', 'none')
+    $("#homeNavbar").css('display', 'none')
+    $("#loginPage").css('display', 'none')
+
+    $("#registerForm").css('display', 'block')
 
     // trail  customer
     //
@@ -75,17 +75,17 @@ $(".getStartBtn").click(function () {
 
     // trail admin
 
-    $("#admin").css("display", "block")
-    $("#adminNavBar").css("display", "block")
-    $("#homePage").css("display", "none")
-    $("#homeNavbar").css("display", "none")
-
-    $("#adminDailySummary").css("display", "block")
-    $("#adminCars").css("display", "none")
-    $("#adminReservation").css("display", "none")
-    $("#adminDrivers").css("display", "none")
-    $("#adminCustomer").css("display", "none")
-    $("#adminPayments").css("display", "none")
+    // $("#admin").css("display", "block")
+    // $("#adminNavBar").css("display", "block")
+    // $("#homePage").css("display", "none")
+    // $("#homeNavbar").css("display", "none")
+    //
+    // $("#adminDailySummary").css("display", "block")
+    // $("#adminCars").css("display", "none")
+    // $("#adminReservation").css("display", "none")
+    // $("#adminDrivers").css("display", "none")
+    // $("#adminCustomer").css("display", "none")
+    // $("#adminPayments").css("display", "none")
 
 
 })
@@ -114,11 +114,17 @@ $("#loginFormBtn").click(function () {
 //---------Customer Login
 function customerLogin(data) {
 
+    customer = data
 
     $("#loginPage").css("display", "none")
     $("#customer").css("display", "block")
     $("#customerNavbar").css("display", "block")
 
+    $("#customer-profile-nic").val(data.nic)
+    $("#customer-profile-name").val(data.customer_name)
+    $("#customer-profile-email").val(data.email)
+    $("#customer-profile-address").val(data.address)
+    $("#customer-profile-mobile").val(data.mobile)
 
 
 }
@@ -130,7 +136,7 @@ function driverLogin(data) {
     $("#driverNavBar").css("display", "block")
     $("#driver").css("display", "block")
 
-
+    loadDriverSchedule(data);
 
 }
 
@@ -222,6 +228,7 @@ $("#adminCustomerBtn").click(function () {
     $("#adminDrivers").css("display", "none")
     $("#adminPayments").css("display", "none")
 
+    loadAllCustomer()
 
 })
 
@@ -245,6 +252,7 @@ $("#adminDriversBtn").click(function () {
     $("#enableSaveDriverBtn").css("display", "block");
     $("#enableSearchDriverBtn").css("visibility", "hidden");
 
+    loadAllDrivers()
 
 })
 
@@ -264,6 +272,8 @@ $("#adminPaymentBtn").click(function () {
 
     $("#enableSaveDriverBtn").css("display", "block");
     $("#enableSearchDriverBtn").css("visibility", "hidden");
+
+    loadAllDrivers()
 
 })
 
