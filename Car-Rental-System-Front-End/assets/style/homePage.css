@@ -1,9 +1,14 @@
 
-.custom-container-one {
-    display: flex;
-    flex-wrap: wrap;
-    height: 51vw;
-    justify-content: center;
+.custom-card-daily{
+
+    font-size: 2vw;
+    font-family: "Arial Rounded MT Bold";
+}
+
+.custom-card-price{
+
+    font-size: 1.7vw;
+    font-family: "Arial Rounded MT Bold";
 }
 
 .container-one {
@@ -21,12 +26,13 @@
     flex-direction: row;
     justify-content: center;
     width: 101vw;
-    height: 500px;
-    background: #e8ee0c
+    height: 40%;
+
 }
 
 .container-three {
     display: flex;
+    position: relative;
     flex-direction: row;
     justify-content: center;
     width: 100%;
@@ -34,21 +40,28 @@
     background: #B22D2B
 }
 
-.container-side-one{
+.custom-container-one {
+    display: flex;
+    flex-wrap: wrap;
+    height: 51vw;
+    justify-content: center;
+}
+
+.carRent-slide-one{
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 99vw;
     height: 700px;
     justify-content: center;
     align-items: center;
-    /*border-bottom:3px solid gray;*/
+
 }
 .home-car-detail{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 95%;
-    width: 100%;
+    width: 95%;
     margin-top: 2%;
 }
 
@@ -73,8 +86,27 @@
     height: 50vw;
 }
 
+.home-custom-card {
+    width: 95%;
+    height: 100%;
+    margin-right: 2%;
+    margin-left: 2%;
+
+
+}
+
+.home-custom-card-img {
+    height: 220px;
+    width: 85%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2%;
+}
+
+
 .header-title {
-    color: #FFFFFF;
+    color: rgba(15, 59, 219, 0.99);
     font-size: 4.5vw;
     font-weight: bolder;
     margin-bottom: 8vw;
