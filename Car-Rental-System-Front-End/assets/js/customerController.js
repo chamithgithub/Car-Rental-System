@@ -1,4 +1,13 @@
 
+// //----------------customer page nav
+// //---Home
+// $("#customerHomeBtn").click(function () {
+//     $("#customerReservation").css("display", "none")
+//     $("#customerProfile").css("display", "none")
+//
+//     $("#customerHome").css("display", "block")
+// })
+
 var customer;
 var customer_nic;
 
@@ -42,12 +51,8 @@ function registerCustomer() {
         success: function (resp) {
             alert(resp.message);
             if (!(resp.data == null)) {
-
-
                 openCustomerHome(resp.data)
-
-            //grdtgdrrgdfg
-
+                getAvailableCar();
             }
         },
         error: function (err) {
@@ -77,6 +82,7 @@ function openCustomerHome(data) {
     $("#customer-profile-address").val(data.address)
     $("#customer-profile-mobile").val(data.mobile)
 }
+
 function loadAllCustomer() {
     $("#admin-customer-table").empty();
 
@@ -98,6 +104,7 @@ function loadAllCustomer() {
         }
     });
 }
+
 function setDataToViewCustomerModal(data) {
     $("#admin-view-customer-nic").val(data.nic)
     $("#admin-view-customer-address").val(data.address)
@@ -146,7 +153,7 @@ $("#btnChangePassword").click(function () {
                 if (res.message === ("Customer")) {
                     changePassword(customer.nic, customer.user_name, newPassword);
                 } else {
-                    alert("Current Password Didnt match")
+                    alert("Current Password not match")
                 }
             }
         },
@@ -172,7 +179,7 @@ function changePassword(nic, user_name, newPassword) {
             if (res.status === 200) {
                 alert(res.message)
             } else {
-                alert("Cant update your password in this moment")
+                alert("not update your password")
             }
         },
         error: function (ob) {
@@ -180,9 +187,11 @@ function changePassword(nic, user_name, newPassword) {
         }
     });
 }
+
 $("#customer-updateBtn").click(function () {
     customerUpdateValidation()
 })
+
 function updateCustomer() {
     var newDetails = {
         nic: $("#customer-profile-nic").val(),
@@ -206,7 +215,7 @@ function updateCustomer() {
             if (res.status === 200) {
                 alert(res.message)
             } else {
-                alert("Cant update your Details in this moment")
+                alert("not update your Details")
             }
         },
         error: function (ob) {
