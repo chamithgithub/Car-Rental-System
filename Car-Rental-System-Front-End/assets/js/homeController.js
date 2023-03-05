@@ -1,6 +1,85 @@
 
 var baseUrl = "http://localhost:8080/Car_Rental_System/"
+
 loadTodayAvailableCars();
+
+
+//--------------Today available cars------------
+
+function loadTodayAvailableCars() {
+    $.ajax({
+        url: baseUrl + "controller/car/availableOrRentalCarsByDate?pick_up_date=" + today + "&return_date=&status=Available",
+        method: 'GET',
+        success: function (resp) {
+            if (resp.status === 200) {
+                carList = resp.data
+                loadDataToDiv()
+            }
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+
+// ---------------card div generate
+
+let divArray = ["#div-one", "#div-two", "#div-three","#div-four"];
+
+function loadDataToDiv() {
+
+    displayDiv = 0
+    for (var i = 0; listNo <= carList.length - 1; i++, listNo++, displayDiv++) {
+
+        $("#tag").css("display", "none")
+        $(divArray[i]).css("display", "block")
+
+        if (i > 3) {
+            break
+        }
+        let img = "#" + $(divArray[i]).children()[0].id
+        let type = "#" + $(divArray[i]).children().children()[0].id;
+        let brand = "#" + $(divArray[i]).children().children()[1].id;
+        let daily = "#" + $(divArray[i]).children().children()[4].id
+        let monthly = "#" + $(divArray[i]).children().children()[7].id
+
+        let fuel = "#" + $("#" + $(divArray[i]).children().children()[9].id).children()[1].id;
+        let transmission = "#" + $("#" + $(divArray[i]).children().children()[10].id).children()[1].id;
+
+        $(img).attr("src", baseUrl + carList[listNo].carImgDetail.image_1)
+        $(type).text(carList[listNo].type)
+        $(brand).text(carList[listNo].brand)
+        $(daily).text(carList[listNo].daily_rate)
+        $(monthly).text(carList[listNo].monthly_rate)
+        $(fuel).text(carList[listNo].fuel_type)
+        $(transmission).text(carList[listNo].transmission)
+    }
+
+}
+
+$("#home-nextBtn").click(function () {
+    if (carList.length === listNo) {
+        return
+    }
+    $('#div-one, #div-two,#div-three,#div-four').css({
+        display: 'none'
+    })
+
+    loadDataToDiv()
+
+})
+
+$("#home-PreviousBtn").click(function () {
+    if (4 >= listNo) {
+        return
+    }
+    $('#div-one, #div-two,#div-three,#div-four').css({
+        display: 'none'
+    })
+    listNo = listNo - (displayDiv + 4)
+    loadDataToDiv()
+})
+
 
 //-------------------- Login
 $("#loginUserBtn").click(function () {
@@ -121,7 +200,6 @@ function customerLogin(data) {
 
     getAvailableCar();
     clearAllReservationDetails()
-    // cxv
 }
 
 //---------Driver Login
@@ -150,8 +228,16 @@ function adminLogin(data) {
     $("#adminCustomer").css("display", "none")
     $("#adminPayments").css("display", "none")
 
+    loadDailySummary();
 
+}
 
+function loadDailySummary() {
+    loadIncome();
+    loadAvailableAndRentalCar();
+    loadAvailableAndOccupiedDrivers();
+    loadTodayReservations();
+    loadTodayPayments()
 }
 
 //-------------admin profile nav
@@ -166,7 +252,7 @@ $("#adminDashboardBtn").click(function () {
     $("#adminCustomer").css("display", "none")
     $("#adminPayments").css("display", "none")
 
-//    $("#admin-view-reservation").css("display", "none")
+    loadDailySummary();
 
 })
 
@@ -276,10 +362,6 @@ $("#adminPaymentBtn").click(function () {
 })
 
 
-
-
-
-
 //----------------customer page nav
 //---Home
 $("#customerHomeBtn").click(function () {
@@ -320,82 +402,6 @@ $("#customerChangePasswordBtn").click(function () {
     $("#customerProfileUpdateDetail").css("display", "none")
 })
 
-//Today available cars------------
-
-function loadTodayAvailableCars() {
-    $.ajax({
-        url: baseUrl + "controller/car/availableOrRentalCarsByDate?pick_up_date=" + today + "&return_date=&status=Available",
-        method: 'GET',
-        success: function (resp) {
-            if (resp.status === 200) {
-                carList = resp.data
-                loadDataToDiv()
-            }
-        },
-        error: function (err) {
-            console.log(err);
-        }
-    });
-}
-
-
-// ---------------card div generate
-
-let divArray = ["#div-one", "#div-two", "#div-three","#div-four"];
-
-function loadDataToDiv() {
-
-    displayDiv = 0
-    for (var i = 0; listNo <= carList.length - 1; i++, listNo++, displayDiv++) {
-
-        $("#tag").css("display", "none")
-        $(divArray[i]).css("display", "block")
-
-        if (i > 3) {
-            break
-        }
-        let img = "#" + $(divArray[i]).children()[0].id
-        let type = "#" + $(divArray[i]).children().children()[0].id;
-        let brand = "#" + $(divArray[i]).children().children()[1].id;
-        let daily = "#" + $(divArray[i]).children().children()[4].id
-        let monthly = "#" + $(divArray[i]).children().children()[7].id
-
-        let fuel = "#" + $("#" + $(divArray[i]).children().children()[9].id).children()[1].id;
-        let transmission = "#" + $("#" + $(divArray[i]).children().children()[10].id).children()[1].id;
-
-        $(img).attr("src", baseUrl + carList[listNo].carImgDetail.image_1)
-        $(type).text(carList[listNo].type)
-        $(brand).text(carList[listNo].brand)
-        $(daily).text(carList[listNo].daily_rate)
-        $(monthly).text(carList[listNo].monthly_rate)
-        $(fuel).text(carList[listNo].fuel_type)
-        $(transmission).text(carList[listNo].transmission)
-    }
-
-}
-
-$("#home-nextBtn").click(function () {
-    if (carList.length === listNo) {
-        return
-    }
-    $('#div-one, #div-two,#div-three,#div-four').css({
-        display: 'none'
-    })
-
-    loadDataToDiv()
-
-})
-
-$("#home-PreviousBtn").click(function () {
-    if (4 >= listNo) {
-        return
-    }
-    $('#div-one, #div-two,#div-three,#div-four').css({
-        display: 'none'
-    })
-    listNo = listNo - (displayDiv + 4)
-    loadDataToDiv()
-})
 
 
 
@@ -440,8 +446,126 @@ function clearAllReservationDetails() {
     $('#customer-reservation-driver-id,#customer-reservation-driver-name, #customer-reservation-driver-license,#customer-reservation-driver-mobile, #customer-reservation-driver-joinDate').text("")
     $('#customer-reservation-id,#customer-reservation-name,#customer-reservation-vehicle,#customer-reservation-venue,#customer-reservation-pickUp-time,#customer-reservation-pickUp-date,#customer-reservation-return-date,#customer-reservation-days').text("")
     $("#customer-upcoming-reservation-table").empty();
-
 }
+
+    function loadTodayReservations() {
+        $("#admin-daily-reservation-table").empty();
+
+        $.ajax({
+            url: baseUrl + "controller/reservation/todayReservation",
+            method: "GET",
+            success: function (resp) {
+                for (const reservation of resp.data) {
+                    let row = `<tr><td>${reservation.reserve_id}</td><td>${reservation.car.registration_no}</td><td>${reservation.customer.nic}</td></tr>`;
+                    $("#admin-daily-reservation-table").append(row);
+                }
+            }
+        });
+
+    }
+//--Admin Dashboard
+    function loadIncome() {
+        $.ajax({
+            url: baseUrl + "controller/payment/daily_weekly_Annually_Income?type=Daily&start_date=&end_date=",
+            method: "GET",
+            success: function (resp) {
+                if (resp.status === 200) {
+                    $("#admin-daily-income").text(resp.data)
+                }
+            }
+        });
+        $.ajax({
+            url: baseUrl + "controller/payment/daily_weekly_Annually_Income?type=Monthly&start_date=&end_date=",
+            method: "GET",
+            success: function (resp) {
+                if (resp.status === 200) {
+                    $("#admin-Monthly-income").text(resp.data)
+                }
+            }
+        });
+        $.ajax({
+            url: baseUrl + "controller/payment/daily_weekly_Annually_Income?type=Weekly&start_date=&end_date=",
+            method: "GET",
+            success: function (resp) {
+                if (resp.status === 200) {
+                    $("#admin-weekly-income").text(resp.data)
+                }
+            }
+        });
+        $.ajax({
+            url: baseUrl + "controller/payment/daily_weekly_Annually_Income?type=Yearly&start_date=&end_date=",
+            method: "GET",
+            success: function (resp) {
+                if (resp.status === 200) {
+                    $("#admin-Yearly-income").text(resp.data)
+                }
+            }
+        });
+
+    }
+
+    function loadAvailableAndRentalCar() {
+        $.ajax({
+            url: baseUrl + "controller/car/availableOrRentalCarsByDate?pick_up_date=" + today + "&return_date=&status=Available",
+            method: "GET",
+            success: function (resp) {
+                if (resp.status === 200) {
+                    $("#admin-daily-available-cars").text(resp.data.length)
+                }
+            }
+        });
+        $.ajax({
+            url: baseUrl + "controller/car/availableOrRentalCarsByDate?pick_up_date=" + today + "&return_date=&status=Rental",
+            method: "GET",
+            success: function (resp) {
+                if (resp.status === 200) {
+                    $("#admin-daily-rental-cars").text(resp.data.length)
+                }
+            }
+        });
+    }
+    function loadAvailableAndOccupiedDrivers() {
+        $.ajax({
+            url: baseUrl + "controller/driver/todayAvailableAndOccupiedDrivers/Available",
+            method: "GET",
+            success: function (resp) {
+                if (resp.status === 200) {
+                    $("#admin-daily-available-drivers").text(resp.data.length)
+                }
+            }
+        });
+        $.ajax({
+            url: baseUrl + "controller/driver/todayAvailableAndOccupiedDrivers/Occupied",
+            method: "GET",
+            success: function (resp) {
+                if (resp.status === 200) {
+                    $("#admin-daily-occupied-cars").text(resp.data.length)
+                }
+            }
+        });
+    }
+
+    function loadTodayPayments() {
+        $("#admin-daily-payment-table").empty();
+
+        $.ajax({
+            url: baseUrl + "controller/payment/todayIncomeList",
+            method: "GET",
+            success: function (resp) {
+                for (const payment of resp.data) {
+                    let row = `<tr><td>${payment.bill_id}</td><td>${payment.carReservation.reserve_id}</td><td>${payment.pay_date}</td><td>${payment.total_payment}</td></tr>`;
+                    $("#admin-daily-payment-table").append(row);
+                }
+            }
+        });
+    }
+
+//Set  date
+var now = new Date();
+var day = ("0" + now.getDate()).slice(-2);
+var month = ("0" + (now.getMonth() + 1)).slice(-2);
+var today = now.getFullYear() + "-" + (month) + "-" + (day);
+
 
 
 

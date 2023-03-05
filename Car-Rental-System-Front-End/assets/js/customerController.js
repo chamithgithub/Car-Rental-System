@@ -224,3 +224,63 @@ function updateCustomer() {
     });
 }
 
+// // ---------------card div generate
+//
+// let divArray = ["#div-one", "#div-two", "#div-three"];
+//
+// function loadDataToDiv2() {
+//
+//     displayDiv = 0
+//     for (var i = 0; listNo <= carList.length - 1; i++, listNo++, displayDiv++) {
+//
+//         $("#tag").css("display", "none")
+//         $(divArray[i]).css("display", "block")
+//
+//         if (i > 2) {
+//             break
+//         }
+//         let img = "#" + $(divArray[i]).children()[0].id
+//         let type = "#" + $(divArray[i]).children().children()[0].id;
+//         let brand = "#" + $(divArray[i]).children().children()[1].id;
+//         let daily = "#" + $(divArray[i]).children().children()[4].id
+//         let monthly = "#" + $(divArray[i]).children().children()[7].id
+//
+//         let fuel = "#" + $("#" + $(divArray[i]).children().children()[9].id).children()[1].id;
+//         let transmission = "#" + $("#" + $(divArray[i]).children().children()[10].id).children()[1].id;
+//
+//         $(img).attr("src", baseUrl + carList[listNo].carImgDetail.image_1)
+//         $(type).text(carList[listNo].type)
+//         $(brand).text(carList[listNo].brand)
+//         $(daily).text(carList[listNo].daily_rate)
+//         $(monthly).text(carList[listNo].monthly_rate)
+//         $(fuel).text(carList[listNo].fuel_type)
+//         $(transmission).text(carList[listNo].transmission)
+//     }
+//
+// }
+// $("#customer-home-nextCarBtn").click(function () {
+//     if (carList.length === listNo) {
+//         return
+//     }
+//     $('#div-one, #div-two,#div-three,#div-four').css({
+//         display: 'none'
+//     })
+//
+//     loadDataToDiv2()
+//
+// })
+//
+// $("#customer-home-previousCarBtn").click(function () {
+//     if (4 >= listNo) {
+//         return
+//     }
+//     $('#div-one, #div-two,#div-three,#div-four').css({
+//         display: 'none'
+//     })
+//     listNo = listNo - (displayDiv + 3)
+//     loadDataToDiv2()
+// })
+
+$('#register-form-date').val(today);
+$('#customer-home-pickup').val(today);
+

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Easy_car_rental_system</title>
     <link rel="icon" href="./assets/img/icon.jpg">
@@ -31,22 +31,19 @@
 <header>
 
     <!--    homeNavbar header-->
-    <nav style="display:block;" id="homeNavbar" class="navbar navbar-expand-lg bg-dark">
-        <div class="container-fluid">
-            <i class="fa-solid text-light fs-2   "></i>
-            <img src="./assets/img/icon.jpg "  width="65" height="55">
-            <h3 style="display: block" class="navbar-brand fw-bolder ms-5 fs-1 text-light  me-5"> Welcome </h3>
-            <div style="display: block" class="collapse navbar-collapse">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+    <nav style="display:block;" id="homeNavbar" class="navbar navbar-expand navbar-dark bg-dark ">
 
-                </ul>
+        <div class="collapse navbar-collapse ">
+
+            <img class="ms-3" src="./assets/img/icon.jpg "  width="65" height="55" >
+
+            <h3 style="display: block ;width: 200px;" class="navbar-brand fw-bolder ms-5 fs-1 text-light mx-lg-auto " > Welcome </h3>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
 
                 <span class="navbar-text me-5">
-                      <button id="loginFormBtn" class="btn btn-outline-warning fs-6  fw-bold "
-                              type="submit">LOGIN</button>
+                      <button id="loginFormBtn" class="btn btn-outline-warning fs-6 ms-5 fw-bold " type="submit">LOGIN</button>
                 </span>
-            </div>
-
+        </ul>
         </div>
     </nav>
 
@@ -132,13 +129,13 @@
         <div class="custom-container-one">
             <div class="container-one">
                 <div class="sub-container-one">
-                    <h3 class="header-title mt-3">
+                    <h3 class="header-title mt-lg-3 mt-sm-5">
                         EASY CAR RENTAL <br/>
                         private limited. <br/>
                     </h3>
                     <br/>
                     <br/>
-                    <h2 style="color:white;">
+                    <h2 style="color:red;" class="mt-lg-5">
                         Let's start <br/>your journey <br/>in Sri Lanka
                     </h2>
                     <button type="button" class="btn btn-dark register-btn-homePage getStartBtn">Get Started</button>
@@ -162,8 +159,8 @@
             </div>
             <div class="carRent-slide-one ">
                 <br>
-                <div style=" height: 5%;margin-bottom: 1%"><p class="fs-2 fw-bold mt-3 text-black">Today Services
-                    Cars</p></div>
+<!--                <div style=" height: 5%;margin-bottom: 1%"><p -->
+<!--                        class="fs-2 fw-bold mt-3 text-black">Today Services Cars</p></div>-->
                 <br style="clear:both;">
                 <button id="home-PreviousBtn" type="button" class="btn btn-outline-warning me-1">
                     <i class="fa-solid fs-2 text-danger fa-arrow-left"></i>
@@ -239,7 +236,7 @@
                     </div>
                     <div style="display:none;" id="div-four" class="card home-custom-card ">
                         <img id="today-four-car-img" src="assets/img/4.png"
-                             class="home-custom-card-img" alt="...">
+                             class="home-custom-card-img" alt="pic4">
                         <div class="card-body">
                             <h6 id="today-four-car-brand">General</h6>
                             <h3 id="today-four-car-type" class="card-title">Toyota</h3><br>
@@ -286,12 +283,13 @@
                         <h2 class="h2">Our Drivers</h2>
                     </div>
                     <div class="detail-box-two">
-                        <h3 style="text-align: center " >Location at No. 200, Galle
-                            Road, Panadura
-                            <br>
-                            <br>
-                            Tell No_032-99 99 999
-                        </h3>
+
+                            <h3 class="h2">Location at No. 200, Galle
+                                Road, Panadura. </h3>
+
+
+                        <h2 class="h2">Tell No_032-99 99 999</h2>
+
                     </div>
 
                 </div>
@@ -1776,10 +1774,10 @@
                 </div>
                 <div class="customer-home-container-two">
                     <div class="customer-home-div-one">
-                        <p class="fs-1 fw-bold mt-4 text-black">Available Cars</p>
+<!--                        <p class="fs-1 fw-bold mt-4 text-black">Available Cars</p>-->
                     </div>
                     <div class="customer-home-main-two">
-                        <h1 id="homeUnavailableTag" class="text-warning">No Available Cars</h1>
+<!--                        <h1 id="homeUnavailableTag" class="text-warning">No Available Cars</h1>-->
                         <div style="display: none" id="divOne" class="card custom-card ">
 
                             <img id="card-one-img" src="assets/img/1.png" class="custom-card-img" alt="...">

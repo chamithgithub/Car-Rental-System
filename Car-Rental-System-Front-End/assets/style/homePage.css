@@ -18,7 +18,8 @@
     justify-content: center;
     width: 101vw;
     height: 41vw;
-    background: #39d01c;
+
+    background: url("../img/backgrond.jpg");
 }
 
 .container-two {
@@ -26,11 +27,13 @@
     flex-direction: row;
     justify-content: center;
     width: 101vw;
-    height: 40%;
+    height: 70%;
+    background: url("../img/backgrond.jpg");
 
 }
 
 .container-three {
+
     display: flex;
     position: relative;
     flex-direction: row;
@@ -48,6 +51,7 @@
 }
 
 .carRent-slide-one{
+    background: url("../img/backgrond.jpg");
     display: flex;
     flex-direction: column;
     width: 99vw;
@@ -71,7 +75,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    width: 64vw;
+    width: 60vw;
     height: 40vw;
     position: relative;
     margin-bottom: -3vw;
@@ -109,7 +113,7 @@
     color: rgba(15, 59, 219, 0.99);
     font-size: 4.5vw;
     font-weight: bolder;
-    margin-bottom: 8vw;
+
 }
 
 
@@ -147,7 +151,7 @@ h3 {
     margin-left: 72vw;
     font-weight: bolder;
     width: 20vw;
-    top: -6vw;
+    top: -8vw;
     position: relative;
 }
 .detail-box-two {
@@ -156,7 +160,7 @@ h3 {
     align-items: center;
     width: 300px;
     height: 90%;
-    margin: 35px;
+    margin: 1%;
 }
 .footerImg {
     height: 50%;
