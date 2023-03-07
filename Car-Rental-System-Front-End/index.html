@@ -16,8 +16,6 @@
     <link rel="stylesheet" href="assets/style/adminDashboard.css">
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/style/customerPage.css">
-
-<!--    hdfh-->
     <link rel="stylesheet" href="assets/style/customerReservation.css">
     <link rel="stylesheet" href="assets/style/customerAccount.css">
 
@@ -1732,6 +1730,7 @@
     <!--                                 customer part                        -->
     <section style="display:none;" id="customer">
 
+<!--        customerHome-->
         <section style="display: block" id="customerHome">
             <div class="customer-home-container">
                 <div class="customer-home-container-one">
@@ -1777,7 +1776,7 @@
 <!--                        <p class="fs-1 fw-bold mt-4 text-black">Available Cars</p>-->
                     </div>
                     <div class="customer-home-main-two">
-<!--                        <h1 id="homeUnavailableTag" class="text-warning">No Available Cars</h1>-->
+                        <h1 id="homeUnavailableTag" class="text-warning">No Available Cars</h1>
                         <div style="display: none" id="divOne" class="card custom-card ">
 
                             <img id="card-one-img" src="assets/img/1.png" class="custom-card-img" alt="...">
@@ -2047,12 +2046,14 @@
                                     <div class="modal-footer justify-content-center">
                                         <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close
                                         </button>
-                                        <button type="button" id="btnReservationSave" class="btn btn-dark">Save</button>
+                                        <button type="button" id="btnReservationSave" class="btn btn-dark">Add</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+ <!--                    button-->
                     <div class="customer-home-div-two">
                         <button id="customer-home-previousCarBtn" type="button" class="btn btn-danger me-1">
                             <i class="fa-solid fs-2 fa-circle-arrow-left"></i>
@@ -2067,7 +2068,7 @@
             </div>
 
         </section>
-
+<!--        customerReservation-->
         <section style="display: none" id="customerReservation">
 
             <div class="customer-res-sub__container">
@@ -2137,7 +2138,7 @@
 
 
         </section>
-
+<!--        customerProfile-->
         <section style="display: none" id="customerProfile">
 
             <div class="customer-pro-container ">
@@ -2279,6 +2280,7 @@
 <script src="assets/js/driverController.js"></script>
 <script src="assets/js/carController.js"></script>
 <script src="assets/js/paymentController.js"></script>
+<script src="assets/js/reservationController.js"></script>
 
 
 </body>

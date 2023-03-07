@@ -84,19 +84,6 @@ $("#home-PreviousBtn").click(function () {
 //-------------------- Login
 $("#loginUserBtn").click(function () {
 
-    // trail
-    // $("#loginPage").css("display", "none")
-    // $("#admin").css("display", "block")
-    // $("#adminNavBar").css("display", "block")
-    //
-    // $("#adminDailySummary").css("display", "block")
-    // $("#adminCars").css("display", "none")
-    // $("#adminReservation").css("display", "none")
-    // $("#adminDrivers").css("display", "none")
-    // $("#adminCustomer").css("display", "none")
-    // $("#adminPayments").css("display", "none")
-
-
 
     let userDTO = {
         user_name: $("#login-page-user-name").val(),
@@ -133,23 +120,23 @@ $("#loginUserBtn").click(function () {
 
 //-------------register page
 $(".getStartBtn").click(function () {
-    $("#homePage").css('display', 'none')
-    $("#homeNavbar").css('display', 'none')
-    $("#loginPage").css('display', 'none')
+    // $("#homePage").css('display', 'none')
+    // $("#homeNavbar").css('display', 'none')
+    // $("#loginPage").css('display', 'none')
+    //
+    // $("#registerForm").css('display', 'block')
+    //
+    // // trail  customer
+    //
+     $("#homePage").css('display', 'none')
+     $("#homeNavbar").css('display', 'none')
 
-    $("#registerForm").css('display', 'block')
 
-    // trail  customer
-    //
-    //  $("#homePage").css('display', 'none')
-    //  $("#homeNavbar").css('display', 'none')
-    //
-    //
-    //     $("#customerReservation").css("display", "none")
-    //     $("#customerProfile").css("display", "none")
-    //
-    //     $("#customer").css("display", "block")
-    // $("#customerNavbar").css("display", "block")
+        $("#customerReservation").css("display", "none")
+        $("#customerProfile").css("display", "none")
+
+        $("#customer").css("display", "block")
+        $("#customerNavbar").css("display", "block")
 
 
     // trail admin
@@ -171,13 +158,30 @@ $(".getStartBtn").click(function () {
 
 //-------------login page------------
 $("#loginFormBtn").click(function () {
-    //
 
 
     $("#homePage").css('display', 'none')
     $("#homeNavbar").css('display', 'none')
 
     $("#loginPage").css('display', 'block')
+
+
+    // // //trail admin
+    //
+    // $("#homePage").css('display', 'none')
+    // $("#homeNavbar").css('display', 'none')
+    //
+    // $("#admin").css("display", "block")
+    // $("#adminNavBar").css("display", "block")
+    //
+    // $("#adminDailySummary").css("display", "block")
+    // $("#adminCars").css("display", "none")
+    // $("#adminReservation").css("display", "none")
+    // $("#adminDrivers").css("display", "none")
+    // $("#adminCustomer").css("display", "none")
+    // $("#adminPayments").css("display", "none")
+    //
+    // loadDailySummary();
 })
 
 
@@ -272,7 +276,7 @@ $("#adminReservationBtn").click(function () {
     $("#admin-update-reservation").css("display", "block")
     $("#admin-view-reservation").css("display", "none")
 
-//    $("#admin-view-reservation").css("display", "none")
+    loadPendingReservations();
 })
 
 //--Cars
@@ -285,7 +289,7 @@ $("#adminCarsBtn").click(function () {
     $("#adminCustomer").css("display", "none")
     $("#adminPayments").css("display", "none")
 
-
+    loadAllCars("allCarDetail");
 
     $("#availableBtn").css("display", "none");
     $("#unavailableBtn").css("display", "none");
@@ -377,6 +381,8 @@ $("#customerReservationBtn").click(function () {
     $("#customerProfile").css("display", "none")
     $("#customerHome").css("display", "none")
     $("#customerReservation").css("display", "block")
+
+    loadUpcomingReservation();
 
 
 })

@@ -8,8 +8,14 @@
 //     $("#customerHome").css("display", "block")
 // })
 
+// loadDataToDiv2()
+// loadTodayAvailableCars();
+
+
 var customer;
 var customer_nic;
+$('#register-form-date').val(today);
+$('#customer-home-pickup').val(today);
 
 $("#registerNowBtn").click(function () {
     registerFormValidation()
@@ -224,7 +230,9 @@ function updateCustomer() {
     });
 }
 
-// // ---------------card div generate
+
+
+// // --------22222-------card div generate
 //
 // let divArray = ["#div-one", "#div-two", "#div-three"];
 //
@@ -236,7 +244,7 @@ function updateCustomer() {
 //         $("#tag").css("display", "none")
 //         $(divArray[i]).css("display", "block")
 //
-//         if (i > 2) {
+//         if (i > 3) {
 //             break
 //         }
 //         let img = "#" + $(divArray[i]).children()[0].id
@@ -262,7 +270,7 @@ function updateCustomer() {
 //     if (carList.length === listNo) {
 //         return
 //     }
-//     $('#div-one, #div-two,#div-three,#div-four').css({
+//     $('#div-one, #div-two,#div-three').css({
 //         display: 'none'
 //     })
 //
@@ -271,16 +279,14 @@ function updateCustomer() {
 // })
 //
 // $("#customer-home-previousCarBtn").click(function () {
-//     if (4 >= listNo) {
+//     if (3 >= listNo) {
 //         return
 //     }
-//     $('#div-one, #div-two,#div-three,#div-four').css({
+//     $('#div-one, #div-two,#div-three').css({
 //         display: 'none'
 //     })
 //     listNo = listNo - (displayDiv + 3)
 //     loadDataToDiv2()
 // })
-
-$('#register-form-date').val(today);
-$('#customer-home-pickup').val(today);
-
+//
+//
